@@ -521,109 +521,11 @@ Transform:
   m_Children:
   - {fileID: 432709238}
   - {fileID: 818909459}
-  - {fileID: 2051953108}
+  - {fileID: 2436359696218328211}
   - {fileID: 600625876}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2051953104
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2051953108}
-  - component: {fileID: 2051953110}
-  - component: {fileID: 2051953111}
-  m_Layer: 0
-  m_Name: PepperRobot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2051953108
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051953104}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1253043225909118772}
-  m_Father: {fileID: 1176665911}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2051953110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051953104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5053681f1566bfb499f79126fda9ab7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
-  Target: {fileID: 0}
-  HeadYawParent: {fileID: 8470256869808986676}
-  HeadPitchParent: {fileID: 2733472263583306075}
-  LShoulderPitchParent: {fileID: 8803724253209049253}
-  LShoulderRollParent: {fileID: 6342002580124583974}
-  LElbowYawParent: {fileID: 4939798309125623626}
-  LElbowRollParent: {fileID: 2567405452468914273}
-  LWristYawParent: {fileID: 5091026718251042638}
-  LHandParent: {fileID: 0}
-  RShoulderPitchParent: {fileID: 4926761405148963788}
-  RShoulderRollParent: {fileID: 6619107664658684528}
-  RElbowYawParent: {fileID: 6096924305834711819}
-  RElbowRollParent: {fileID: 5825673503313040659}
-  RWristYawParent: {fileID: 7217352967563414407}
-  RHandParent: {fileID: 0}
-  HipRollParent: {fileID: 888735344564282767}
-  HipPitchParent: {fileID: 3284878775789426705}
-  KneePitchParent: {fileID: 1862208856061271173}
-  FrontColorCamera: {fileID: 313546800741252743}
---- !u!114 &2051953111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051953104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BrainParameters:
-    VectorObservationSize: 1
-    NumStackedVectorObservations: 1
-    m_ActionSpec:
-      m_NumContinuousActions: 0
-      BranchSizes: 01000000
-    VectorActionSize: 01000000
-    VectorActionDescriptions: []
-    VectorActionSpaceType: 0
-    hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
-  m_InferenceDevice: 0
-  m_BehaviorType: 0
-  m_BehaviorName: My Behavior
-  TeamId: 0
-  m_UseChildSensors: 1
-  m_UseChildActuators: 1
-  m_ObservableAttributeHandling: 0
 --- !u!1 &3666455900844775
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,22 +2917,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1253043225909118772
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3497935826027292485}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7194156877569097128}
-  - {fileID: 2436359696218328211}
-  m_Father: {fileID: 2051953108}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1256614302380277583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3396,18 +3282,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1427820658084526259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3497935826027292485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf4c79288754864b8d522b69f4b52a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1437616118830300297
 GameObject:
   m_ObjectHideFlags: 0
@@ -5990,8 +5864,10 @@ GameObject:
   - component: {fileID: 2436359696218328208}
   - component: {fileID: 2436359696218328209}
   - component: {fileID: 2436359696218328215}
+  - component: {fileID: 2436359696218328213}
+  - component: {fileID: 2436359696218328212}
   m_Layer: 8
-  m_Name: base_link
+  m_Name: PepperRobot (base_link)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6005,13 +5881,79 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2436359696218328210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5526532642966578971}
-  m_Father: {fileID: 1253043225909118772}
-  m_RootOrder: 1
+  m_Father: {fileID: 1176665911}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2436359696218328212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436359696218328210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5053681f1566bfb499f79126fda9ab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  Target: {fileID: 0}
+  HeadYawParent: {fileID: 8470256869808986676}
+  HeadPitchParent: {fileID: 2733472263583306075}
+  LShoulderPitchParent: {fileID: 8803724253209049253}
+  LShoulderRollParent: {fileID: 6342002580124583974}
+  LElbowYawParent: {fileID: 4939798309125623626}
+  LElbowRollParent: {fileID: 2567405452468914273}
+  LWristYawParent: {fileID: 5091026718251042638}
+  LHandParent: {fileID: 0}
+  RShoulderPitchParent: {fileID: 4926761405148963788}
+  RShoulderRollParent: {fileID: 6619107664658684528}
+  RElbowYawParent: {fileID: 6096924305834711819}
+  RElbowRollParent: {fileID: 5825673503313040659}
+  RWristYawParent: {fileID: 7217352967563414407}
+  RHandParent: {fileID: 0}
+  HipRollParent: {fileID: 888735344564282767}
+  HipPitchParent: {fileID: 3284878775789426705}
+  KneePitchParent: {fileID: 1862208856061271173}
+  BaseRBody: {fileID: 2436359696218328208}
+  FrontColorCamera: {fileID: 313546800741252743}
+--- !u!114 &2436359696218328213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436359696218328210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 1
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 0
+      BranchSizes: 01000000
+    VectorActionSize: 01000000
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 0
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: My Behavior
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_ObservableAttributeHandling: 0
 --- !u!114 &2436359696218328214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8684,36 +8626,6 @@ Transform:
   m_Father: {fileID: 441796857528191319}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3497935826027292484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3497935826027292485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ea7feb8c58f2e1099e66e977832104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &3497935826027292485
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1253043225909118772}
-  - component: {fileID: 1427820658084526259}
-  - component: {fileID: 3497935826027292484}
-  m_Layer: 8
-  m_Name: Pepper
-  m_TagString: Robot
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!114 &3498791921009225501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17869,20 +17781,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7194156877569097128
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133004021729944209}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1253043225909118772}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7195598939388604651
 Transform:
   m_ObjectHideFlags: 0
@@ -21243,18 +21141,6 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 18.5
   m_ConnectedMassScale: 0.3
---- !u!114 &8806449380504245217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133004021729944209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fae53a797b5479c43b9a3aeac7e35e5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8812265006070348413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21925,23 +21811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f37dc21ac85e2b4ca12e377369baae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &9133004021729944209
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7194156877569097128}
-  - component: {fileID: 8806449380504245217}
-  m_Layer: 8
-  m_Name: Plugins
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!114 &9147689346839262908
 MonoBehaviour:
   m_ObjectHideFlags: 0

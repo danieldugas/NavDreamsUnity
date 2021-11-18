@@ -39,3 +39,6 @@ sysinfo.txt
 /Output/*
 /Bin/*
 /Assets/TMP*
+
+# Manually added by Daniel
+Assets/ML-Agents/Timers/Prototype_timers.json

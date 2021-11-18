@@ -41,7 +41,7 @@ public class PepperRobotAgent : Agent
     {
         this.BaseRBody.angularVelocity = Vector3.zero;
         this.BaseRBody.velocity = Vector3.zero;
-        this.transform.localPosition = new Vector3( 0, 0.5f, 0);
+        this.transform.localPosition = new Vector3( -2.0f, 0.0f, 0.0f);
     }
 
     public override void CollectObservations(VectorSensor sensor)

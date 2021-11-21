@@ -31,6 +31,8 @@ public class PepperRobotAgent : Agent
     public HingeJoint HipPitchParent;
     public HingeJoint KneePitchParent;
     public Rigidbody BaseRBody;
+    [Range(0, 1)]
+    public float TestJointValue;
     // Sensors (observations)
     public Camera FrontColorCamera;
     public int image_width = 64;
@@ -74,7 +76,11 @@ public class PepperRobotAgent : Agent
         if (forceMultiplier != 0.0f) {
         BaseRBody.AddForce(required_force_wf);
         BaseRBody.AddTorque(-BaseRBody.transform.right * required_force.z * 0.2f);
-        } // NOCOMMIT
+        }
+        // Move joint, as a test
+        JointSpring spring = LElbowRollParent.spring;
+        spring.targetPosition = TestJointValue * -90.0f;
+        LElbowRollParent.spring = spring;
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
 

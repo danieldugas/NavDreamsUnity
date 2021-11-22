@@ -128,6 +128,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400010, guid: 824e5d3304849c04c9be3255f05aa184, type: 3}
   m_PrefabInstance: {fileID: 618646010}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &417494035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100010, guid: 824e5d3304849c04c9be3255f05aa184, type: 3}
+  m_PrefabInstance: {fileID: 618646010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &417494037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417494035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e6d17a9f8eff8a5a824d0f6361890c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &432709234
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 824e5d3304849c04c9be3255f05aa184, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.99
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 824e5d3304849c04c9be3255f05aa184, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5702,6 +5719,7 @@ MonoBehaviour:
   KneePitchParent: {fileID: 1862208856061271173}
   BaseRBody: {fileID: 3702157310429511340}
   TestJointValue: 0
+  person: {fileID: 417494037}
   FrontColorCamera: {fileID: 313546800741252743}
   image_width: 64
   image_height: 64
@@ -5721,9 +5739,9 @@ MonoBehaviour:
     VectorObservationSize: 8
     NumStackedVectorObservations: 1
     m_ActionSpec:
-      m_NumContinuousActions: 2
+      m_NumContinuousActions: 4
       BranchSizes: 
-    VectorActionSize: 02000000
+    VectorActionSize: 04000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1

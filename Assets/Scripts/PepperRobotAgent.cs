@@ -33,6 +33,8 @@ public class PepperRobotAgent : Agent
     public Rigidbody BaseRBody;
     [Range(0, 1)]
     public float TestJointValue;
+    // People
+    public PersonNavController person;
     // Sensors (observations)
     public Camera FrontColorCamera;
     public int image_width = 64;
@@ -65,22 +67,36 @@ public class PepperRobotAgent : Agent
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         // Actions, size = 2
-        Vector3 controlSignal = Vector3.zero;
-        controlSignal.x = actionBuffers.ContinuousActions[0];
-        controlSignal.z = actionBuffers.ContinuousActions[1];
-        Vector3 required_vel_adjustment = controlSignal - BaseRBody.transform.InverseTransformDirection(BaseRBody.velocity); // local frame
+        Vector3 commandVel = Vector3.zero;
+        commandVel.x = actionBuffers.ContinuousActions[0];
+        commandVel.z = actionBuffers.ContinuousActions[1];
+        Vector3 commandRot = Vector3.zero;
+        commandRot.y = actionBuffers.ContinuousActions[2];
+        Vector3 required_vel_adjustment = commandVel - BaseRBody.transform.InverseTransformDirection(BaseRBody.velocity); // local frame
+        Vector3 required_rot_adjustment = commandRot - BaseRBody.transform.InverseTransformDirection(BaseRBody.angularVelocity); // local frame
         Vector3 required_accel = required_vel_adjustment;
+        Vector3 required_rot_accel = required_rot_adjustment;
         Vector3 required_force = required_accel * forceMultiplier;
+        Vector3 required_torque = required_rot_accel * forceMultiplier;
         Vector3 required_force_wf = BaseRBody.transform.TransformDirection(required_force);
+        Vector3 required_torque_wf = BaseRBody.transform.TransformDirection(required_torque);
         required_force_wf.y = 0.0f; // we can't affect vertical acceleration
+        required_torque_wf.x = 0.0f; // we can't control non-vertical-axis rotation
+        required_torque_wf.z = 0.0f;
         if (forceMultiplier != 0.0f) {
         BaseRBody.AddForce(required_force_wf);
         BaseRBody.AddTorque(-BaseRBody.transform.right * required_force.z * 0.2f);
+        BaseRBody.AddTorque(required_torque_wf);
         }
         // Move joint, as a test
         JointSpring spring = LElbowRollParent.spring;
         spring.targetPosition = TestJointValue * -90.0f;
         LElbowRollParent.spring = spring;
+        JointSpring spring2 = LShoulderPitchParent.spring;
+        spring2.targetPosition = actionBuffers.ContinuousActions[3] * -90.0f;
+        LShoulderPitchParent.spring = spring2;
+        // Move person as a test
+        person.DoNavStep();
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
 
@@ -103,5 +119,17 @@ public class PepperRobotAgent : Agent
     var continuousActionsOut = actionsOut.ContinuousActions;
     continuousActionsOut[0] = Input.GetAxis("Horizontal");
     continuousActionsOut[1] = Input.GetAxis("Vertical");
+    if (Input.GetButton("Fire1"))
+    {
+        continuousActionsOut[2] = -1.0f;
+    }
+    if (Input.GetButton("Fire2"))
+    {
+        continuousActionsOut[2] = 1.0f;
+    }
+    if (Input.GetButton("Jump"))
+    {
+        continuousActionsOut[3] = 1.0f;
+    }
 }
 }

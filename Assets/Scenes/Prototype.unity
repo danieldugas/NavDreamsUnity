@@ -409,6 +409,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 824e5d3304849c04c9be3255f05aa184, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e37e8b2ec0a63b3459448625bc18fa2c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824e5d3304849c04c9be3255f05aa184, type: 3}
 --- !u!1 &652387508
@@ -5697,6 +5701,7 @@ MonoBehaviour:
   HipPitchParent: {fileID: 3284878775789426705}
   KneePitchParent: {fileID: 1862208856061271173}
   BaseRBody: {fileID: 3702157310429511340}
+  TestJointValue: 0
   FrontColorCamera: {fileID: 313546800741252743}
   image_width: 64
   image_height: 64

@@ -34,7 +34,8 @@ public class PepperRobotAgent : Agent
     [Range(0, 1)]
     public float TestJointValue;
     // People
-    public PersonNavController person;
+    public PeopleNavController people;
+    public EnvironmentController environment;
     // Sensors (observations)
     public Camera FrontColorCamera;
     public int image_width = 64;
@@ -47,9 +48,19 @@ public class PepperRobotAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        int n_robots = 1;
+        int n_people = 1;
+        int n_difficulty = 1;
+        // Reset the environment
+        environment.OnEpisodeBegin(n_robots, n_difficulty, n_people, out Vector3[] robot_positions, out Vector3[] people_positions, out Vector3[] robot_goals, out Vector3[] people_goals);
+        // Reset people
+        people.OnEpisodeBegin(n_people, people_positions, people_goals);
+        // Reset robot
         this.BaseRBody.angularVelocity = Vector3.zero;
         this.BaseRBody.velocity = Vector3.zero;
-        this.transform.localPosition = new Vector3( -2.0f, 0.0f, 0.0f);
+        this.transform.position = robot_positions[0];
+        this.Target.position = robot_goals[0];
+        this.Target.gameObject.GetComponent<Renderer>().enabled = false;
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -66,6 +77,7 @@ public class PepperRobotAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
+        float timestep = 0.2f;
         // Actions, size = 2
         Vector3 commandVel = Vector3.zero;
         commandVel.x = actionBuffers.ContinuousActions[0];
@@ -96,7 +108,7 @@ public class PepperRobotAgent : Agent
         spring2.targetPosition = actionBuffers.ContinuousActions[3] * -90.0f;
         LShoulderPitchParent.spring = spring2;
         // Move person as a test
-        person.DoNavStep();
+        people.DoNavStep(environment, timestep);
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
 

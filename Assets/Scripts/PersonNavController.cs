@@ -7,18 +7,20 @@ using UnityEngine;
 public class PersonNavController : MonoBehaviour
 {
     public GameObject currentGoal;
-    public float currentGoalTimeRemaining;
+    public float waitAtGoalTimeRemaining;
+    public static float kGoalReachedDist = 0.1f;
 
 
     // Called by the ML-Agents environment to tell the person to reset itself
-    public void Reset(Vector3 position, Vector3 goal, float duration)
+    // duration is the time in seconds that the goal remains valid, even if reached (used to give idle tasks)
+    public void Reset(Vector3 position, Vector3 goal)
     {
         Destroy(currentGoal);
         currentGoal = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         currentGoal.GetComponent<Collider>().enabled = false;
         currentGoal.GetComponent<Renderer>().enabled = false;
         currentGoal.transform.position = goal;
-        currentGoalTimeRemaining = duration;
+        waitAtGoalTimeRemaining = SampleGoalWaitTime();
         transform.position = position;
     }
     public void RemoveFromScene()
@@ -39,17 +41,21 @@ public class PersonNavController : MonoBehaviour
         this.transform.Rotate(new Vector3(0.0f, 0.2f, 0.0f));
         this.GetComponent<Animator>().SetFloat("Speed", 0.1f);
 
-        // if goal is reached, ask for a new one
-        if (currentGoalTimeRemaining <= 0.0f || (currentGoal.transform.position - this.transform.position).magnitude < 0.1f)
-        {
-            currentGoal.transform.position = environmentController.SamplePersonGoal(this.transform.position);
-            currentGoalTimeRemaining = 60.0f;
-        }
-        else
-        {
-            currentGoalTimeRemaining -= timestep;
+        // if goal is reached, ask for a new one or wait for a while
+        if ((currentGoal.transform.position - this.transform.position).magnitude < kGoalReachedDist) {
+            waitAtGoalTimeRemaining -= timestep;
+            if (waitAtGoalTimeRemaining <= 0.0f)
+            {
+                currentGoal.transform.position = environmentController.SamplePersonGoal(this.transform.position);
+                waitAtGoalTimeRemaining = SampleGoalWaitTime();
+            }
         }
         
+    }
+
+    private float SampleGoalWaitTime()
+    {
+        return Random.Range(0.0f, 60.0f);
     }
     
 }

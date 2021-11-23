@@ -16,7 +16,7 @@ public class PeopleNavController : MonoBehaviour
                 person.RemoveFromScene();
             }
             person.AddToScene();
-            person.Reset(people_positions[i], people_goals[i], 60.0f);
+            person.Reset(people_positions[i], people_goals[i]);
             i++;
         }
     }

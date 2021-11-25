@@ -41,6 +41,7 @@ public class PepperRobotAgent : Agent
     public int image_width = 64;
     public int image_height = 64;
     private CameraSensor cameraSensor;
+    private float LastActionTime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,7 +78,11 @@ public class PepperRobotAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        float timestep = 0.2f;
+        float now = Time.time;
+        float timestep = now - LastActionTime;
+        LastActionTime = now;
+        Debug.Log(Time.time);
+        Debug.Log(timestep);
         // Actions, size = 2
         Vector3 commandVel = Vector3.zero;
         commandVel.x = actionBuffers.ContinuousActions[0];

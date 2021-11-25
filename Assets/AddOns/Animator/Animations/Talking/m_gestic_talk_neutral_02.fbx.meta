@@ -1,262 +1,764 @@
 fileFormatVersion: 2
 guid: 50cbec559d41b8641b001cf6bcecbb02
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Bip01
-    100002: Bip01 Footsteps
-    100004: Bip01 Head
-    100006: Bip01 HeadNub
-    100008: Bip01 L Calf
-    100010: Bip01 L Clavicle
-    100012: Bip01 L Finger0
-    100014: Bip01 L Finger01
-    100016: Bip01 L Finger02
-    100018: Bip01 L Finger0Nub
-    100020: Bip01 L Finger1
-    100022: Bip01 L Finger11
-    100024: Bip01 L Finger12
-    100026: Bip01 L Finger1Nub
-    100028: Bip01 L Finger2
-    100030: Bip01 L Finger21
-    100032: Bip01 L Finger22
-    100034: Bip01 L Finger2Nub
-    100036: Bip01 L Finger3
-    100038: Bip01 L Finger31
-    100040: Bip01 L Finger32
-    100042: Bip01 L Finger3Nub
-    100044: Bip01 L Finger4
-    100046: Bip01 L Finger41
-    100048: Bip01 L Finger42
-    100050: Bip01 L Finger4Nub
-    100052: Bip01 L Foot
-    100054: Bip01 L Forearm
-    100056: Bip01 L Hand
-    100058: Bip01 L Thigh
-    100060: Bip01 L Toe0
-    100062: Bip01 L Toe0Nub
-    100064: Bip01 L UpperArm
-    100066: Bip01 LCaninus
-    100068: Bip01 LCaninusNub
-    100070: Bip01 LCheek
-    100072: Bip01 LCheekNub
-    100074: Bip01 LEye
-    100076: Bip01 LEyeBlinkBottom
-    100078: Bip01 LEyeBlinkBottomNub
-    100080: Bip01 LEyeBlinkTop
-    100082: Bip01 LEyeBlinkTopNub
-    100084: Bip01 LEyeNub
-    100086: Bip01 LInnerEyebrow
-    100088: Bip01 LInnerEyebrowNub
-    100090: Bip01 LMasseter
-    100092: Bip01 LMasseterNub
-    100094: Bip01 LMouthBottom
-    100096: Bip01 LMouthBottomNub
-    100098: Bip01 LMouthCorner
-    100100: Bip01 LMouthCornerNub
-    100102: Bip01 LOuterEyebrow
-    100104: Bip01 LOuterEyebrowNub
-    100106: Bip01 LUpperlip
-    100108: Bip01 LUpperlipNub
-    100110: Bip01 MBottomLip
-    100112: Bip01 MBottomLipNub
-    100114: Bip01 MJaw
-    100116: Bip01 MJawNub
-    100118: Bip01 MMiddleEyebrow
-    100120: Bip01 MMiddleEyebrowNub
-    100122: Bip01 MNose
-    100124: Bip01 MNoseNub
-    100126: Bip01 MTongue
-    100128: Bip01 MTongueNub
-    100130: Bip01 MUpperLip
-    100132: Bip01 MUpperLipNub
-    100134: Bip01 Neck
-    100136: Bip01 Pelvis
-    100138: Bip01 R Calf
-    100140: Bip01 R Clavicle
-    100142: Bip01 R Finger0
-    100144: Bip01 R Finger01
-    100146: Bip01 R Finger02
-    100148: Bip01 R Finger0Nub
-    100150: Bip01 R Finger1
-    100152: Bip01 R Finger11
-    100154: Bip01 R Finger12
-    100156: Bip01 R Finger1Nub
-    100158: Bip01 R Finger2
-    100160: Bip01 R Finger21
-    100162: Bip01 R Finger22
-    100164: Bip01 R Finger2Nub
-    100166: Bip01 R Finger3
-    100168: Bip01 R Finger31
-    100170: Bip01 R Finger32
-    100172: Bip01 R Finger3Nub
-    100174: Bip01 R Finger4
-    100176: Bip01 R Finger41
-    100178: Bip01 R Finger42
-    100180: Bip01 R Finger4Nub
-    100182: Bip01 R Foot
-    100184: Bip01 R Forearm
-    100186: Bip01 R Hand
-    100188: Bip01 R Thigh
-    100190: Bip01 R Toe0
-    100192: Bip01 R Toe0Nub
-    100194: Bip01 R UpperArm
-    100196: Bip01 RCaninus
-    100198: Bip01 RCaninusNub
-    100200: Bip01 RCheek
-    100202: Bip01 RCheekNub
-    100204: Bip01 REye
-    100206: Bip01 REyeBlinkBottom
-    100208: Bip01 REyeBlinkBottomNub
-    100210: Bip01 REyeBlinkTop
-    100212: Bip01 REyeBlinkTopNub
-    100214: Bip01 REyeNub
-    100216: Bip01 RInnerEyebrow
-    100218: Bip01 RInnerEyebrowNub
-    100220: Bip01 RMasseter
-    100222: Bip01 RMasseterNub
-    100224: Bip01 RMouthBottom
-    100226: Bip01 RMouthBottomNub
-    100228: Bip01 RMouthCorner
-    100230: Bip01 RMouthCornerNub
-    100232: Bip01 ROuterEyebrow
-    100234: Bip01 ROuterEyebrowNub
-    100236: Bip01 RUpperlip
-    100238: Bip01 RUpperlipNub
-    100240: Bip01 Spine
-    100242: Bip01 Spine1
-    100244: Bip01 Spine2
-    100246: //RootNode
-    400000: Bip01
-    400002: Bip01 Footsteps
-    400004: Bip01 Head
-    400006: Bip01 HeadNub
-    400008: Bip01 L Calf
-    400010: Bip01 L Clavicle
-    400012: Bip01 L Finger0
-    400014: Bip01 L Finger01
-    400016: Bip01 L Finger02
-    400018: Bip01 L Finger0Nub
-    400020: Bip01 L Finger1
-    400022: Bip01 L Finger11
-    400024: Bip01 L Finger12
-    400026: Bip01 L Finger1Nub
-    400028: Bip01 L Finger2
-    400030: Bip01 L Finger21
-    400032: Bip01 L Finger22
-    400034: Bip01 L Finger2Nub
-    400036: Bip01 L Finger3
-    400038: Bip01 L Finger31
-    400040: Bip01 L Finger32
-    400042: Bip01 L Finger3Nub
-    400044: Bip01 L Finger4
-    400046: Bip01 L Finger41
-    400048: Bip01 L Finger42
-    400050: Bip01 L Finger4Nub
-    400052: Bip01 L Foot
-    400054: Bip01 L Forearm
-    400056: Bip01 L Hand
-    400058: Bip01 L Thigh
-    400060: Bip01 L Toe0
-    400062: Bip01 L Toe0Nub
-    400064: Bip01 L UpperArm
-    400066: Bip01 LCaninus
-    400068: Bip01 LCaninusNub
-    400070: Bip01 LCheek
-    400072: Bip01 LCheekNub
-    400074: Bip01 LEye
-    400076: Bip01 LEyeBlinkBottom
-    400078: Bip01 LEyeBlinkBottomNub
-    400080: Bip01 LEyeBlinkTop
-    400082: Bip01 LEyeBlinkTopNub
-    400084: Bip01 LEyeNub
-    400086: Bip01 LInnerEyebrow
-    400088: Bip01 LInnerEyebrowNub
-    400090: Bip01 LMasseter
-    400092: Bip01 LMasseterNub
-    400094: Bip01 LMouthBottom
-    400096: Bip01 LMouthBottomNub
-    400098: Bip01 LMouthCorner
-    400100: Bip01 LMouthCornerNub
-    400102: Bip01 LOuterEyebrow
-    400104: Bip01 LOuterEyebrowNub
-    400106: Bip01 LUpperlip
-    400108: Bip01 LUpperlipNub
-    400110: Bip01 MBottomLip
-    400112: Bip01 MBottomLipNub
-    400114: Bip01 MJaw
-    400116: Bip01 MJawNub
-    400118: Bip01 MMiddleEyebrow
-    400120: Bip01 MMiddleEyebrowNub
-    400122: Bip01 MNose
-    400124: Bip01 MNoseNub
-    400126: Bip01 MTongue
-    400128: Bip01 MTongueNub
-    400130: Bip01 MUpperLip
-    400132: Bip01 MUpperLipNub
-    400134: Bip01 Neck
-    400136: Bip01 Pelvis
-    400138: Bip01 R Calf
-    400140: Bip01 R Clavicle
-    400142: Bip01 R Finger0
-    400144: Bip01 R Finger01
-    400146: Bip01 R Finger02
-    400148: Bip01 R Finger0Nub
-    400150: Bip01 R Finger1
-    400152: Bip01 R Finger11
-    400154: Bip01 R Finger12
-    400156: Bip01 R Finger1Nub
-    400158: Bip01 R Finger2
-    400160: Bip01 R Finger21
-    400162: Bip01 R Finger22
-    400164: Bip01 R Finger2Nub
-    400166: Bip01 R Finger3
-    400168: Bip01 R Finger31
-    400170: Bip01 R Finger32
-    400172: Bip01 R Finger3Nub
-    400174: Bip01 R Finger4
-    400176: Bip01 R Finger41
-    400178: Bip01 R Finger42
-    400180: Bip01 R Finger4Nub
-    400182: Bip01 R Foot
-    400184: Bip01 R Forearm
-    400186: Bip01 R Hand
-    400188: Bip01 R Thigh
-    400190: Bip01 R Toe0
-    400192: Bip01 R Toe0Nub
-    400194: Bip01 R UpperArm
-    400196: Bip01 RCaninus
-    400198: Bip01 RCaninusNub
-    400200: Bip01 RCheek
-    400202: Bip01 RCheekNub
-    400204: Bip01 REye
-    400206: Bip01 REyeBlinkBottom
-    400208: Bip01 REyeBlinkBottomNub
-    400210: Bip01 REyeBlinkTop
-    400212: Bip01 REyeBlinkTopNub
-    400214: Bip01 REyeNub
-    400216: Bip01 RInnerEyebrow
-    400218: Bip01 RInnerEyebrowNub
-    400220: Bip01 RMasseter
-    400222: Bip01 RMasseterNub
-    400224: Bip01 RMouthBottom
-    400226: Bip01 RMouthBottomNub
-    400228: Bip01 RMouthCorner
-    400230: Bip01 RMouthCornerNub
-    400232: Bip01 ROuterEyebrow
-    400234: Bip01 ROuterEyebrowNub
-    400236: Bip01 RUpperlip
-    400238: Bip01 RUpperlipNub
-    400240: Bip01 Spine
-    400242: Bip01 Spine1
-    400244: Bip01 Spine2
-    400246: //RootNode
-    7400000: default_squeleton
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bip01
+  - first:
+      1: 100002
+    second: Bip01 Footsteps
+  - first:
+      1: 100004
+    second: Bip01 Head
+  - first:
+      1: 100006
+    second: Bip01 HeadNub
+  - first:
+      1: 100008
+    second: Bip01 L Calf
+  - first:
+      1: 100010
+    second: Bip01 L Clavicle
+  - first:
+      1: 100012
+    second: Bip01 L Finger0
+  - first:
+      1: 100014
+    second: Bip01 L Finger01
+  - first:
+      1: 100016
+    second: Bip01 L Finger02
+  - first:
+      1: 100018
+    second: Bip01 L Finger0Nub
+  - first:
+      1: 100020
+    second: Bip01 L Finger1
+  - first:
+      1: 100022
+    second: Bip01 L Finger11
+  - first:
+      1: 100024
+    second: Bip01 L Finger12
+  - first:
+      1: 100026
+    second: Bip01 L Finger1Nub
+  - first:
+      1: 100028
+    second: Bip01 L Finger2
+  - first:
+      1: 100030
+    second: Bip01 L Finger21
+  - first:
+      1: 100032
+    second: Bip01 L Finger22
+  - first:
+      1: 100034
+    second: Bip01 L Finger2Nub
+  - first:
+      1: 100036
+    second: Bip01 L Finger3
+  - first:
+      1: 100038
+    second: Bip01 L Finger31
+  - first:
+      1: 100040
+    second: Bip01 L Finger32
+  - first:
+      1: 100042
+    second: Bip01 L Finger3Nub
+  - first:
+      1: 100044
+    second: Bip01 L Finger4
+  - first:
+      1: 100046
+    second: Bip01 L Finger41
+  - first:
+      1: 100048
+    second: Bip01 L Finger42
+  - first:
+      1: 100050
+    second: Bip01 L Finger4Nub
+  - first:
+      1: 100052
+    second: Bip01 L Foot
+  - first:
+      1: 100054
+    second: Bip01 L Forearm
+  - first:
+      1: 100056
+    second: Bip01 L Hand
+  - first:
+      1: 100058
+    second: Bip01 L Thigh
+  - first:
+      1: 100060
+    second: Bip01 L Toe0
+  - first:
+      1: 100062
+    second: Bip01 L Toe0Nub
+  - first:
+      1: 100064
+    second: Bip01 L UpperArm
+  - first:
+      1: 100066
+    second: Bip01 LCaninus
+  - first:
+      1: 100068
+    second: Bip01 LCaninusNub
+  - first:
+      1: 100070
+    second: Bip01 LCheek
+  - first:
+      1: 100072
+    second: Bip01 LCheekNub
+  - first:
+      1: 100074
+    second: Bip01 LEye
+  - first:
+      1: 100076
+    second: Bip01 LEyeBlinkBottom
+  - first:
+      1: 100078
+    second: Bip01 LEyeBlinkBottomNub
+  - first:
+      1: 100080
+    second: Bip01 LEyeBlinkTop
+  - first:
+      1: 100082
+    second: Bip01 LEyeBlinkTopNub
+  - first:
+      1: 100084
+    second: Bip01 LEyeNub
+  - first:
+      1: 100086
+    second: Bip01 LInnerEyebrow
+  - first:
+      1: 100088
+    second: Bip01 LInnerEyebrowNub
+  - first:
+      1: 100090
+    second: Bip01 LMasseter
+  - first:
+      1: 100092
+    second: Bip01 LMasseterNub
+  - first:
+      1: 100094
+    second: Bip01 LMouthBottom
+  - first:
+      1: 100096
+    second: Bip01 LMouthBottomNub
+  - first:
+      1: 100098
+    second: Bip01 LMouthCorner
+  - first:
+      1: 100100
+    second: Bip01 LMouthCornerNub
+  - first:
+      1: 100102
+    second: Bip01 LOuterEyebrow
+  - first:
+      1: 100104
+    second: Bip01 LOuterEyebrowNub
+  - first:
+      1: 100106
+    second: Bip01 LUpperlip
+  - first:
+      1: 100108
+    second: Bip01 LUpperlipNub
+  - first:
+      1: 100110
+    second: Bip01 MBottomLip
+  - first:
+      1: 100112
+    second: Bip01 MBottomLipNub
+  - first:
+      1: 100114
+    second: Bip01 MJaw
+  - first:
+      1: 100116
+    second: Bip01 MJawNub
+  - first:
+      1: 100118
+    second: Bip01 MMiddleEyebrow
+  - first:
+      1: 100120
+    second: Bip01 MMiddleEyebrowNub
+  - first:
+      1: 100122
+    second: Bip01 MNose
+  - first:
+      1: 100124
+    second: Bip01 MNoseNub
+  - first:
+      1: 100126
+    second: Bip01 MTongue
+  - first:
+      1: 100128
+    second: Bip01 MTongueNub
+  - first:
+      1: 100130
+    second: Bip01 MUpperLip
+  - first:
+      1: 100132
+    second: Bip01 MUpperLipNub
+  - first:
+      1: 100134
+    second: Bip01 Neck
+  - first:
+      1: 100136
+    second: Bip01 Pelvis
+  - first:
+      1: 100138
+    second: Bip01 R Calf
+  - first:
+      1: 100140
+    second: Bip01 R Clavicle
+  - first:
+      1: 100142
+    second: Bip01 R Finger0
+  - first:
+      1: 100144
+    second: Bip01 R Finger01
+  - first:
+      1: 100146
+    second: Bip01 R Finger02
+  - first:
+      1: 100148
+    second: Bip01 R Finger0Nub
+  - first:
+      1: 100150
+    second: Bip01 R Finger1
+  - first:
+      1: 100152
+    second: Bip01 R Finger11
+  - first:
+      1: 100154
+    second: Bip01 R Finger12
+  - first:
+      1: 100156
+    second: Bip01 R Finger1Nub
+  - first:
+      1: 100158
+    second: Bip01 R Finger2
+  - first:
+      1: 100160
+    second: Bip01 R Finger21
+  - first:
+      1: 100162
+    second: Bip01 R Finger22
+  - first:
+      1: 100164
+    second: Bip01 R Finger2Nub
+  - first:
+      1: 100166
+    second: Bip01 R Finger3
+  - first:
+      1: 100168
+    second: Bip01 R Finger31
+  - first:
+      1: 100170
+    second: Bip01 R Finger32
+  - first:
+      1: 100172
+    second: Bip01 R Finger3Nub
+  - first:
+      1: 100174
+    second: Bip01 R Finger4
+  - first:
+      1: 100176
+    second: Bip01 R Finger41
+  - first:
+      1: 100178
+    second: Bip01 R Finger42
+  - first:
+      1: 100180
+    second: Bip01 R Finger4Nub
+  - first:
+      1: 100182
+    second: Bip01 R Foot
+  - first:
+      1: 100184
+    second: Bip01 R Forearm
+  - first:
+      1: 100186
+    second: Bip01 R Hand
+  - first:
+      1: 100188
+    second: Bip01 R Thigh
+  - first:
+      1: 100190
+    second: Bip01 R Toe0
+  - first:
+      1: 100192
+    second: Bip01 R Toe0Nub
+  - first:
+      1: 100194
+    second: Bip01 R UpperArm
+  - first:
+      1: 100196
+    second: Bip01 RCaninus
+  - first:
+      1: 100198
+    second: Bip01 RCaninusNub
+  - first:
+      1: 100200
+    second: Bip01 RCheek
+  - first:
+      1: 100202
+    second: Bip01 RCheekNub
+  - first:
+      1: 100204
+    second: Bip01 REye
+  - first:
+      1: 100206
+    second: Bip01 REyeBlinkBottom
+  - first:
+      1: 100208
+    second: Bip01 REyeBlinkBottomNub
+  - first:
+      1: 100210
+    second: Bip01 REyeBlinkTop
+  - first:
+      1: 100212
+    second: Bip01 REyeBlinkTopNub
+  - first:
+      1: 100214
+    second: Bip01 REyeNub
+  - first:
+      1: 100216
+    second: Bip01 RInnerEyebrow
+  - first:
+      1: 100218
+    second: Bip01 RInnerEyebrowNub
+  - first:
+      1: 100220
+    second: Bip01 RMasseter
+  - first:
+      1: 100222
+    second: Bip01 RMasseterNub
+  - first:
+      1: 100224
+    second: Bip01 RMouthBottom
+  - first:
+      1: 100226
+    second: Bip01 RMouthBottomNub
+  - first:
+      1: 100228
+    second: Bip01 RMouthCorner
+  - first:
+      1: 100230
+    second: Bip01 RMouthCornerNub
+  - first:
+      1: 100232
+    second: Bip01 ROuterEyebrow
+  - first:
+      1: 100234
+    second: Bip01 ROuterEyebrowNub
+  - first:
+      1: 100236
+    second: Bip01 RUpperlip
+  - first:
+      1: 100238
+    second: Bip01 RUpperlipNub
+  - first:
+      1: 100240
+    second: Bip01 Spine
+  - first:
+      1: 100242
+    second: Bip01 Spine1
+  - first:
+      1: 100244
+    second: Bip01 Spine2
+  - first:
+      1: 100246
+    second: //RootNode
+  - first:
+      4: 400000
+    second: Bip01
+  - first:
+      4: 400002
+    second: Bip01 Footsteps
+  - first:
+      4: 400004
+    second: Bip01 Head
+  - first:
+      4: 400006
+    second: Bip01 HeadNub
+  - first:
+      4: 400008
+    second: Bip01 L Calf
+  - first:
+      4: 400010
+    second: Bip01 L Clavicle
+  - first:
+      4: 400012
+    second: Bip01 L Finger0
+  - first:
+      4: 400014
+    second: Bip01 L Finger01
+  - first:
+      4: 400016
+    second: Bip01 L Finger02
+  - first:
+      4: 400018
+    second: Bip01 L Finger0Nub
+  - first:
+      4: 400020
+    second: Bip01 L Finger1
+  - first:
+      4: 400022
+    second: Bip01 L Finger11
+  - first:
+      4: 400024
+    second: Bip01 L Finger12
+  - first:
+      4: 400026
+    second: Bip01 L Finger1Nub
+  - first:
+      4: 400028
+    second: Bip01 L Finger2
+  - first:
+      4: 400030
+    second: Bip01 L Finger21
+  - first:
+      4: 400032
+    second: Bip01 L Finger22
+  - first:
+      4: 400034
+    second: Bip01 L Finger2Nub
+  - first:
+      4: 400036
+    second: Bip01 L Finger3
+  - first:
+      4: 400038
+    second: Bip01 L Finger31
+  - first:
+      4: 400040
+    second: Bip01 L Finger32
+  - first:
+      4: 400042
+    second: Bip01 L Finger3Nub
+  - first:
+      4: 400044
+    second: Bip01 L Finger4
+  - first:
+      4: 400046
+    second: Bip01 L Finger41
+  - first:
+      4: 400048
+    second: Bip01 L Finger42
+  - first:
+      4: 400050
+    second: Bip01 L Finger4Nub
+  - first:
+      4: 400052
+    second: Bip01 L Foot
+  - first:
+      4: 400054
+    second: Bip01 L Forearm
+  - first:
+      4: 400056
+    second: Bip01 L Hand
+  - first:
+      4: 400058
+    second: Bip01 L Thigh
+  - first:
+      4: 400060
+    second: Bip01 L Toe0
+  - first:
+      4: 400062
+    second: Bip01 L Toe0Nub
+  - first:
+      4: 400064
+    second: Bip01 L UpperArm
+  - first:
+      4: 400066
+    second: Bip01 LCaninus
+  - first:
+      4: 400068
+    second: Bip01 LCaninusNub
+  - first:
+      4: 400070
+    second: Bip01 LCheek
+  - first:
+      4: 400072
+    second: Bip01 LCheekNub
+  - first:
+      4: 400074
+    second: Bip01 LEye
+  - first:
+      4: 400076
+    second: Bip01 LEyeBlinkBottom
+  - first:
+      4: 400078
+    second: Bip01 LEyeBlinkBottomNub
+  - first:
+      4: 400080
+    second: Bip01 LEyeBlinkTop
+  - first:
+      4: 400082
+    second: Bip01 LEyeBlinkTopNub
+  - first:
+      4: 400084
+    second: Bip01 LEyeNub
+  - first:
+      4: 400086
+    second: Bip01 LInnerEyebrow
+  - first:
+      4: 400088
+    second: Bip01 LInnerEyebrowNub
+  - first:
+      4: 400090
+    second: Bip01 LMasseter
+  - first:
+      4: 400092
+    second: Bip01 LMasseterNub
+  - first:
+      4: 400094
+    second: Bip01 LMouthBottom
+  - first:
+      4: 400096
+    second: Bip01 LMouthBottomNub
+  - first:
+      4: 400098
+    second: Bip01 LMouthCorner
+  - first:
+      4: 400100
+    second: Bip01 LMouthCornerNub
+  - first:
+      4: 400102
+    second: Bip01 LOuterEyebrow
+  - first:
+      4: 400104
+    second: Bip01 LOuterEyebrowNub
+  - first:
+      4: 400106
+    second: Bip01 LUpperlip
+  - first:
+      4: 400108
+    second: Bip01 LUpperlipNub
+  - first:
+      4: 400110
+    second: Bip01 MBottomLip
+  - first:
+      4: 400112
+    second: Bip01 MBottomLipNub
+  - first:
+      4: 400114
+    second: Bip01 MJaw
+  - first:
+      4: 400116
+    second: Bip01 MJawNub
+  - first:
+      4: 400118
+    second: Bip01 MMiddleEyebrow
+  - first:
+      4: 400120
+    second: Bip01 MMiddleEyebrowNub
+  - first:
+      4: 400122
+    second: Bip01 MNose
+  - first:
+      4: 400124
+    second: Bip01 MNoseNub
+  - first:
+      4: 400126
+    second: Bip01 MTongue
+  - first:
+      4: 400128
+    second: Bip01 MTongueNub
+  - first:
+      4: 400130
+    second: Bip01 MUpperLip
+  - first:
+      4: 400132
+    second: Bip01 MUpperLipNub
+  - first:
+      4: 400134
+    second: Bip01 Neck
+  - first:
+      4: 400136
+    second: Bip01 Pelvis
+  - first:
+      4: 400138
+    second: Bip01 R Calf
+  - first:
+      4: 400140
+    second: Bip01 R Clavicle
+  - first:
+      4: 400142
+    second: Bip01 R Finger0
+  - first:
+      4: 400144
+    second: Bip01 R Finger01
+  - first:
+      4: 400146
+    second: Bip01 R Finger02
+  - first:
+      4: 400148
+    second: Bip01 R Finger0Nub
+  - first:
+      4: 400150
+    second: Bip01 R Finger1
+  - first:
+      4: 400152
+    second: Bip01 R Finger11
+  - first:
+      4: 400154
+    second: Bip01 R Finger12
+  - first:
+      4: 400156
+    second: Bip01 R Finger1Nub
+  - first:
+      4: 400158
+    second: Bip01 R Finger2
+  - first:
+      4: 400160
+    second: Bip01 R Finger21
+  - first:
+      4: 400162
+    second: Bip01 R Finger22
+  - first:
+      4: 400164
+    second: Bip01 R Finger2Nub
+  - first:
+      4: 400166
+    second: Bip01 R Finger3
+  - first:
+      4: 400168
+    second: Bip01 R Finger31
+  - first:
+      4: 400170
+    second: Bip01 R Finger32
+  - first:
+      4: 400172
+    second: Bip01 R Finger3Nub
+  - first:
+      4: 400174
+    second: Bip01 R Finger4
+  - first:
+      4: 400176
+    second: Bip01 R Finger41
+  - first:
+      4: 400178
+    second: Bip01 R Finger42
+  - first:
+      4: 400180
+    second: Bip01 R Finger4Nub
+  - first:
+      4: 400182
+    second: Bip01 R Foot
+  - first:
+      4: 400184
+    second: Bip01 R Forearm
+  - first:
+      4: 400186
+    second: Bip01 R Hand
+  - first:
+      4: 400188
+    second: Bip01 R Thigh
+  - first:
+      4: 400190
+    second: Bip01 R Toe0
+  - first:
+      4: 400192
+    second: Bip01 R Toe0Nub
+  - first:
+      4: 400194
+    second: Bip01 R UpperArm
+  - first:
+      4: 400196
+    second: Bip01 RCaninus
+  - first:
+      4: 400198
+    second: Bip01 RCaninusNub
+  - first:
+      4: 400200
+    second: Bip01 RCheek
+  - first:
+      4: 400202
+    second: Bip01 RCheekNub
+  - first:
+      4: 400204
+    second: Bip01 REye
+  - first:
+      4: 400206
+    second: Bip01 REyeBlinkBottom
+  - first:
+      4: 400208
+    second: Bip01 REyeBlinkBottomNub
+  - first:
+      4: 400210
+    second: Bip01 REyeBlinkTop
+  - first:
+      4: 400212
+    second: Bip01 REyeBlinkTopNub
+  - first:
+      4: 400214
+    second: Bip01 REyeNub
+  - first:
+      4: 400216
+    second: Bip01 RInnerEyebrow
+  - first:
+      4: 400218
+    second: Bip01 RInnerEyebrowNub
+  - first:
+      4: 400220
+    second: Bip01 RMasseter
+  - first:
+      4: 400222
+    second: Bip01 RMasseterNub
+  - first:
+      4: 400224
+    second: Bip01 RMouthBottom
+  - first:
+      4: 400226
+    second: Bip01 RMouthBottomNub
+  - first:
+      4: 400228
+    second: Bip01 RMouthCorner
+  - first:
+      4: 400230
+    second: Bip01 RMouthCornerNub
+  - first:
+      4: 400232
+    second: Bip01 ROuterEyebrow
+  - first:
+      4: 400234
+    second: Bip01 ROuterEyebrowNub
+  - first:
+      4: 400236
+    second: Bip01 RUpperlip
+  - first:
+      4: 400238
+    second: Bip01 RUpperlipNub
+  - first:
+      4: 400240
+    second: Bip01 Spine
+  - first:
+      4: 400242
+    second: Bip01 Spine1
+  - first:
+      4: 400244
+    second: Bip01 Spine2
+  - first:
+      4: 400246
+    second: //RootNode
+  - first:
+      74: 7400000
+    second: default_squeleton
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -271,10 +773,10 @@ ModelImporter:
     animationImportErrors: 
     animationImportWarnings: "\nClip 'default_squeleton' has import animation warnings
       that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Bip01 Spine' has translation animation that
-      will be discarded.\n\t'Bip01 Spine2' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'Bip01 MJaw' has translation animation
-      that will be discarded.\n"
+      to improve retargeting quality.\n\t'Bip01 Spine' has translation animation
+      that will be discarded.\n\t'Bip01 Spine2' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Bip01 MJaw' has translation
+      animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -290,6 +792,7 @@ ModelImporter:
     - serializedVersion: 16
       name: default_squeleton
       takeName: default_squeleton
+      internalID: 0
       firstFrame: 0
       lastFrame: 1382
       wrapMode: 0
@@ -326,10 +829,11 @@ ModelImporter:
         weight: 1
       - path: Bip01/Bip01 Pelvis/Bip01 L Thigh/Bip01 L Calf/Bip01 L Foot
         weight: 1
-      - path: Bip01/Bip01 Pelvis/Bip01 L Thigh/Bip01 L Calf/Bip01 L Foot/Bip01 L Toe0
+      - path: Bip01/Bip01 Pelvis/Bip01 L Thigh/Bip01 L Calf/Bip01 L Foot/Bip01 L
+          Toe0
         weight: 1
-      - path: Bip01/Bip01 Pelvis/Bip01 L Thigh/Bip01 L Calf/Bip01 L Foot/Bip01 L Toe0/Bip01
-          L Toe0Nub
+      - path: Bip01/Bip01 Pelvis/Bip01 L Thigh/Bip01 L Calf/Bip01 L Foot/Bip01 L
+          Toe0/Bip01 L Toe0Nub
         weight: 1
       - path: Bip01/Bip01 Pelvis/Bip01 R Thigh
         weight: 1
@@ -337,10 +841,11 @@ ModelImporter:
         weight: 1
       - path: Bip01/Bip01 Pelvis/Bip01 R Thigh/Bip01 R Calf/Bip01 R Foot
         weight: 1
-      - path: Bip01/Bip01 Pelvis/Bip01 R Thigh/Bip01 R Calf/Bip01 R Foot/Bip01 R Toe0
+      - path: Bip01/Bip01 Pelvis/Bip01 R Thigh/Bip01 R Calf/Bip01 R Foot/Bip01 R
+          Toe0
         weight: 1
-      - path: Bip01/Bip01 Pelvis/Bip01 R Thigh/Bip01 R Calf/Bip01 R Foot/Bip01 R Toe0/Bip01
-          R Toe0Nub
+      - path: Bip01/Bip01 Pelvis/Bip01 R Thigh/Bip01 R Calf/Bip01 R Foot/Bip01 R
+          Toe0/Bip01 R Toe0Nub
         weight: 1
       - path: Bip01/Bip01 Pelvis/Bip01 Spine
         weight: 1
@@ -696,25 +1201,32 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -723,10 +1235,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: Bip01 Pelvis
       humanName: Hips
@@ -1284,8 +1796,7 @@ ModelImporter:
     - name: Bip01 L Finger0Nub
       parentName: 
       position: {x: -0.026839599, y: 0.000000019073486, z: 0}
-      rotation: {x: -0.0000000011641531, y: -0.0000000037252899, z: -4.336808e-18,
-        w: 1}
+      rotation: {x: -0.0000000011641531, y: -0.0000000037252899, z: -4.336808e-18, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
     - name: Bip01 L Finger1
       parentName: 
@@ -1305,8 +1816,7 @@ ModelImporter:
     - name: Bip01 L Finger1Nub
       parentName: 
       position: {x: -0.020999221, y: 0, z: -0.000000009536743}
-      rotation: {x: 0.000000007450582, y: -0.000000014901161, z: 0.000000029802322,
-        w: 1}
+      rotation: {x: 0.000000007450582, y: -0.000000014901161, z: 0.000000029802322, w: 1}
       scale: {x: 1, y: 0.9999999, z: 1}
     - name: Bip01 L Finger2
       parentName: 
@@ -1366,8 +1876,7 @@ ModelImporter:
     - name: Bip01 L Finger4Nub
       parentName: 
       position: {x: -0.016301421, y: 0, z: 0}
-      rotation: {x: -0.000000007450581, y: -0.0000000018626454, z: 0.000000007450581,
-        w: 1}
+      rotation: {x: -0.000000007450581, y: -0.0000000018626454, z: 0.000000007450581, w: 1}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
     - name: Bip01 Neck
       parentName: 
@@ -1791,14 +2300,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 397da774e45d74443a01effc76c926c2,
-    type: 3}
-  animationType: 3
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 397da774e45d74443a01effc76c926c2, type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

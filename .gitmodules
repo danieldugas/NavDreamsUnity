@@ -1,0 +1,3 @@
+[submodule "Assets/AddOns/Microsoft-Rocketbox"]
+	path = Assets/AddOns/Microsoft-Rocketbox
+	url = https://github.com/microsoft/Microsoft-Rocketbox

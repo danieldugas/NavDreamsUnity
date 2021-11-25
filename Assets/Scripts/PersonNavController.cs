@@ -8,10 +8,16 @@ public class PersonNavController : MonoBehaviour
 {
     public GameObject currentGoal;
     public float waitAtGoalTimeRemaining;
-    public static float kGoalReachedDist = 0.1f;
+    public static float kGoalReachedDist = 1.0f; // vertical distance included!
+    public bool Waiting = false; // If true, the person is waiting at a goal.
 
     void Start()
     {
+        // Add navmeshagent
+        UnityEngine.AI.NavMeshAgent nma = this.gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>() as UnityEngine.AI.NavMeshAgent;
+        nma.radius = 0.3f;
+        nma.height = 1.8f;
+        nma.speed = 1.0f;
         // Add capsule colliders to important limbs and trunk (compromise between accuracy and precision)
         // This is specific to rocketbox joint chain and will fail if gameobject hierarcy is different
         Transform bip = transform.Find("Bip01");
@@ -62,13 +68,16 @@ public class PersonNavController : MonoBehaviour
     // duration is the time in seconds that the goal remains valid, even if reached (used to give idle tasks)
     public void Reset(Vector3 position, Vector3 goal)
     {
+        // Update own position
+        transform.position = position;
+        // Create goal object if it does not exist
         Destroy(currentGoal);
         currentGoal = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         currentGoal.GetComponent<Collider>().enabled = false;
         currentGoal.GetComponent<Renderer>().enabled = false;
-        currentGoal.transform.position = goal;
-        waitAtGoalTimeRemaining = SampleGoalWaitTime();
-        transform.position = position;
+        //
+        UpdateGoal(goal);
+        
     }
     public void RemoveFromScene()
     {
@@ -84,22 +93,50 @@ public class PersonNavController : MonoBehaviour
     }
     public void DoNavStep(EnvironmentController environmentController, float timestep)
     {
-        this.transform.Translate(new Vector3(0.0f, 0.0f, 0.01f));
-        this.transform.Rotate(new Vector3(0.0f, 0.2f, 0.0f));
-        this.GetComponent<Animator>().SetFloat("Speed", 0.1f);
-
-        // if goal is reached, ask for a new one or wait for a while
+        // NavMeshAgent takes care of actual movement, we just set destinations when necessary
+        // check if goal is reached
         if ((currentGoal.transform.position - this.transform.position).magnitude < kGoalReachedDist) {
             waitAtGoalTimeRemaining -= timestep;
             if (waitAtGoalTimeRemaining <= 0.0f)
             {
-                currentGoal.transform.position = environmentController.SamplePersonGoal(this.transform.position);
-                waitAtGoalTimeRemaining = SampleGoalWaitTime();
+                // Ask for a new goal
+                Vector3 goal = environmentController.SamplePersonGoal(this.transform.position);
+                UpdateGoal(goal);
+            } else {
+                if (!Waiting) {
+                    // Wait for a while (enable wait animation)
+                    UnityEngine.AI.NavMeshAgent nma = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
+                    nma.speed = 0.0f;
+                    this.GetComponent<Animator>().SetFloat("Speed", 0.0f);
+                    this.GetComponent<Animator>().SetInteger("AnimationType", Random.Range(1, 4));
+                    Waiting = true;
+                }
             }
         }
         
     }
 
+    // takes the new goal position and samples a wait time and speed, then directs the navmeshagent and animator 
+    private void UpdateGoal(Vector3 goal)
+    {
+        Waiting = false;
+        currentGoal.transform.position = goal;
+        waitAtGoalTimeRemaining = SampleGoalWaitTime();
+        // Update navmesh agent
+        UnityEngine.AI.NavMeshAgent nma = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        nma.destination = currentGoal.transform.position;
+        nma.speed = SampleSpeed();
+        // update animation to walking
+        this.GetComponent<Animator>().SetFloat("Speed", nma.speed);
+    }
+
+    // returns a random speed within the range of possible agent speeds
+    private float SampleSpeed()
+    {
+        return Random.Range(0.5f, 1.0f);
+    }
+
+    // returns a random wait time at goal within the range of possible wait times
     private float SampleGoalWaitTime()
     {
         return Random.Range(0.0f, 60.0f);

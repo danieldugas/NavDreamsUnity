@@ -24,11 +24,11 @@ public class PersonNavController : MonoBehaviour
         // This is specific to rocketbox joint chain and will fail if gameobject hierarcy is different
         try {
         Transform bip = transform.Find("Bip01");
-        Transform lforearm = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 Spine").Find("Bip01 Spine1").Find("Bip01 Spine2").Find("Bip01 L Clavicle").Find("Bip01 L UpperArm").Find("Bip01 L Forearm");
-        Transform lcalf = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 L Thigh").Find("Bip01 L Calf");
+        Transform lforearm = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 Spine").Find("Bip01 Spine1").Find("Bip01 Spine2").Find("Bip01 Neck").Find("Bip01 L Clavicle").Find("Bip01 L UpperArm").Find("Bip01 L Forearm");
+        Transform lcalf = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 Spine").Find("Bip01 L Thigh").Find("Bip01 L Calf");
         Transform lfoot = lcalf.Find("Bip01 L Foot");
-        Transform rforearm = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 Spine").Find("Bip01 Spine1").Find("Bip01 Spine2").Find("Bip01 R Clavicle").Find("Bip01 R UpperArm").Find("Bip01 R Forearm");
-        Transform rcalf = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 R Thigh").Find("Bip01 R Calf");
+        Transform rforearm = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 Spine").Find("Bip01 Spine1").Find("Bip01 Spine2").Find("Bip01 Neck").Find("Bip01 R Clavicle").Find("Bip01 R UpperArm").Find("Bip01 R Forearm");
+        Transform rcalf = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 Spine").Find("Bip01 R Thigh").Find("Bip01 R Calf");
         Transform rfoot = rcalf.Find("Bip01 R Foot");
         CapsuleCollider ccBip = bip.gameObject.AddComponent<CapsuleCollider>() as CapsuleCollider;
         ccBip.center = new Vector3(0.0f, 0.0f, 0.3f);

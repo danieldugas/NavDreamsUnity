@@ -49,10 +49,10 @@ public class PepperRobotAgent : Agent
     public override void OnEpisodeBegin()
     {
         int n_robots = 1;
-        int n_people = 1;
+        int n_people = 4;
         int n_difficulty = 1;
         // Reset the environment
-        environment.OnEpisodeBegin(n_robots, n_difficulty, n_people, out Vector3[] robot_positions, out Vector3[] people_positions, out Vector3[] robot_goals, out Vector3[] people_goals);
+        environment.OnEpisodeBegin(n_robots, n_difficulty, n_people, out Vector3[] robot_positions, out Vector3[] robot_goals, out Vector3[] people_positions, out Vector3[] people_goals);
         // Reset people
         people.OnEpisodeBegin(n_people, people_positions, people_goals);
         // Reset robot

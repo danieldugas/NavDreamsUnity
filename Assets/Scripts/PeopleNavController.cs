@@ -14,10 +14,15 @@ public class PeopleNavController : MonoBehaviour
             if (i >= n_people)
             {
                 person.RemoveFromScene();
+            } else {
+                person.AddToScene();
+                person.Reset(people_positions[i], people_goals[i]);
             }
-            person.AddToScene();
-            person.Reset(people_positions[i], people_goals[i]);
             i++;
+        }
+        if (i < n_people)
+        {
+            Debug.LogError("Not enough people gameobject for requested crowd size");
         }
     }
     public void DoNavStep(EnvironmentController environmentController, float timestep)

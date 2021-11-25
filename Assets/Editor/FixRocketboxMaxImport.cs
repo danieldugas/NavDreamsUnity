@@ -65,7 +65,7 @@ public class FixRocketboxMaxImport : AssetPostprocessor
 
         var importer = (ModelImporter)assetImporter;
         //If you need a humanoid avatar, change it here
-        importer.animationType = ModelImporterAnimationType.Generic;
+        importer.animationType = ModelImporterAnimationType.Human;
     }
     private void RenameBip(GameObject currentBone)
     {

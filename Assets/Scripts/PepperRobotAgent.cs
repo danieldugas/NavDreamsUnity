@@ -50,7 +50,7 @@ public class PepperRobotAgent : Agent
     public override void OnEpisodeBegin()
     {
         int n_robots = 1;
-        int n_people = 4;
+        int n_people = people.GetMaxPeopleCount();
         int n_difficulty = 1;
         // Reset the environment
         environment.OnEpisodeBegin(n_robots, n_difficulty, n_people, out Vector3[] robot_positions, out Vector3[] robot_goals, out Vector3[] people_positions, out Vector3[] people_goals);
@@ -81,8 +81,8 @@ public class PepperRobotAgent : Agent
         float now = Time.time;
         float timestep = now - LastActionTime;
         LastActionTime = now;
-        Debug.Log(Time.time);
-        Debug.Log(timestep);
+        //Debug.Log(Time.time);
+        //Debug.Log(timestep);
         // Actions, size = 2
         Vector3 commandVel = Vector3.zero;
         commandVel.x = actionBuffers.ContinuousActions[0];

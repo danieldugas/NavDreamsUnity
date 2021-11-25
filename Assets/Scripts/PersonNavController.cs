@@ -6,9 +6,11 @@ using UnityEngine;
 // The person should sample possible goals, select one and choose its own behavior and path.
 public class PersonNavController : MonoBehaviour
 {
+    [Header("Debug Attributes (Leave unchanged)")]
+    [Tooltip("Will be created if set to None")]
     public GameObject currentGoal;
     public float waitAtGoalTimeRemaining;
-    public static float kGoalReachedDist = 1.0f; // vertical distance included!
+    public float kGoalReachedDist = 1.0f; // vertical distance included!
     public bool Waiting = false; // If true, the person is waiting at a goal.
 
     void Start()
@@ -20,6 +22,7 @@ public class PersonNavController : MonoBehaviour
         nma.speed = 1.0f;
         // Add capsule colliders to important limbs and trunk (compromise between accuracy and precision)
         // This is specific to rocketbox joint chain and will fail if gameobject hierarcy is different
+        try {
         Transform bip = transform.Find("Bip01");
         Transform lforearm = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 Spine").Find("Bip01 Spine1").Find("Bip01 Spine2").Find("Bip01 L Clavicle").Find("Bip01 L UpperArm").Find("Bip01 L Forearm");
         Transform lcalf = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 L Thigh").Find("Bip01 L Calf");
@@ -62,6 +65,12 @@ public class PersonNavController : MonoBehaviour
         ccRFoot.center = new Vector3(-0.1f, 0.1f, 0.0f);
         ccRFoot.height = 0.2f;
         ccRFoot.direction = 1;
+        }
+        // catch null reference except
+        catch (System.NullReferenceException e) {
+            Debug.Log("Error: " + e.Message);
+            this.transform.SetParent(null);
+        }
     }
 
     // Called by the ML-Agents environment to tell the person to reset itself
@@ -71,10 +80,12 @@ public class PersonNavController : MonoBehaviour
         // Update own position
         transform.position = position;
         // Create goal object if it does not exist
-        Destroy(currentGoal);
-        currentGoal = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        currentGoal.GetComponent<Collider>().enabled = false;
-        currentGoal.GetComponent<Renderer>().enabled = false;
+        if (currentGoal == null)
+        {
+            currentGoal = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            currentGoal.GetComponent<Collider>().enabled = false;
+            currentGoal.GetComponent<Renderer>().enabled = false;
+        }
         //
         UpdateGoal(goal);
         

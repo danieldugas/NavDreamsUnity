@@ -99,6 +99,10 @@ public class LabStaticEnvironmentController : EnvironmentController
             list[j] = list[i - 1];
             list[i - 1] = temp;
         }
+        Debug.Log("------------------");
+        for (int i = 0; i < max; i++) {
+            Debug.Log(list[i]);
+        }
         return list;
     }
 

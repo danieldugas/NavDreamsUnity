@@ -25,6 +25,12 @@ public class PeopleNavController : MonoBehaviour
             Debug.LogError("Not enough people gameobject for requested crowd size");
         }
     }
+
+    public int GetMaxPeopleCount()
+    {
+        return transform.GetComponentsInChildren<PersonNavController>().Length;
+    }
+
     public void DoNavStep(EnvironmentController environmentController, float timestep)
     {
         foreach (PersonNavController person in transform.GetComponentsInChildren<PersonNavController>())

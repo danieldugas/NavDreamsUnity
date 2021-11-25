@@ -36,6 +36,11 @@ public class LabStaticEnvironmentController : EnvironmentController
         {
             robot_positions[i] = SampleSpawn(true);
         }
+        // This can also be removed. It allows reusing spawns as goals, otherwise we need many more spawn points
+        foreach (Transform child in spawns.transform)
+        {
+            child.gameObject.GetComponent<SpawnPoint>().occupied = false;
+        }
         for (int i = 0; i < n_people; i++)
         {
             people_goals[i] = SampleSpawn();

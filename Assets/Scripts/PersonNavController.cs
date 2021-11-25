@@ -69,7 +69,8 @@ public class PersonNavController : MonoBehaviour
         // catch null reference except
         catch (System.NullReferenceException e) {
             Debug.Log("Error: " + e.Message);
-            this.transform.SetParent(null);
+            // TODO: until I fix person colliders (add bones in scene hierarchy), this has to remain commented out.
+            // this.transform.SetParent(null);
         }
     }
 

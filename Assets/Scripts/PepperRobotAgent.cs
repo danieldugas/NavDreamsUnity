@@ -30,7 +30,10 @@ public class PepperRobotAgent : Agent
     public HingeJoint HipRollParent;
     public HingeJoint HipPitchParent;
     public HingeJoint KneePitchParent;
+    [Tooltip("The robot's tibia, base movement is transferred to this rigidbody as a force.")]
     public Rigidbody BaseRBody;
+    [Tooltip("A transform which will be moved to wherever the base is, but kept pointing up and on y=0 plane.")]
+    public Transform BaseFootprint;
     [Range(0, 1)]
     public float TestJointValue;
     // People
@@ -40,6 +43,9 @@ public class PepperRobotAgent : Agent
     public Camera FrontColorCamera;
     public int image_width = 64;
     public int image_height = 64;
+
+    public bool DEBUG = false;
+
     private CameraSensor cameraSensor;
     private float LastActionTime = 0.0f;
     // Start is called before the first frame update
@@ -57,22 +63,52 @@ public class PepperRobotAgent : Agent
         // Reset people
         people.OnEpisodeBegin(n_people, people_positions, people_goals);
         // Reset robot
+        // make all children rigidbodies kinematic
+        foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
+        {
+            rb.isKinematic = true;
+        }
+        this.BaseRBody.isKinematic = true;
+        this.BaseRBody.transform.position = robot_positions[0] + Vector3.up * 0.3f;
+        this.BaseRBody.transform.rotation = Quaternion.identity;
+        this.BaseRBody.isKinematic = false;
+        foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
+        {
+            rb.isKinematic = false;
+        }
         this.BaseRBody.angularVelocity = Vector3.zero;
         this.BaseRBody.velocity = Vector3.zero;
-        this.transform.position = robot_positions[0];
         this.Target.position = robot_goals[0];
         this.Target.gameObject.GetComponent<Renderer>().enabled = false;
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
+        // Move base footprint to wherever the x, z coordinates of the tibia are
+        Vector3 pos = this.BaseRBody.transform.position;
+        pos.y = 0;
+        this.BaseFootprint.position = pos;
+        // projecting robot forward in horizontal plane to align basefootprint yaw still has to be done.
+        // until then, it is unused.
+
+        // Get goal in base frame
+        Vector3 goal_in_base = this.BaseRBody.transform.InverseTransformPoint(this.Target.position);
+        float goal_in_forward = goal_in_base.z;
+        float goal_in_left = -goal_in_base.x;
+        float vel_in_forward = BaseRBody.velocity.z;
+        float vel_in_left = -BaseRBody.velocity.x;
+        float vel_in_trigtop = -BaseRBody.angularVelocity.y;
+        if (DEBUG)
+            Debug.Log("goal_in_forward: " + goal_in_forward + " goal_in_left: " + goal_in_left + " vel_in_forward: " + vel_in_forward + " vel_in_left: " + vel_in_left + " vel_in_trigtop: " + vel_in_trigtop);
+
         // Target and Agent positions
-        sensor.AddObservation(Target.localPosition);
-        sensor.AddObservation(this.transform.localPosition);
+        sensor.AddObservation(goal_in_forward);
+        sensor.AddObservation(goal_in_left);
 
         // Agent velocity
-        sensor.AddObservation(BaseRBody.velocity.x);
-        sensor.AddObservation(BaseRBody.velocity.z);
+        sensor.AddObservation(vel_in_forward);
+        sensor.AddObservation(vel_in_left);
+        sensor.AddObservation(vel_in_trigtop);
     }
 
 
@@ -115,18 +151,30 @@ public class PepperRobotAgent : Agent
         // Move person as a test
         people.DoNavStep(environment, timestep);
         // Rewards
-        float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
+        float distanceToTarget = Vector3.Distance(BaseRBody.transform.position, Target.position);
 
         // Reached target
         if (distanceToTarget < 1.42f)
         {
+            if (DEBUG)
+                Debug.Log("Reached target");
             SetReward(1.0f);
             EndEpisode();
         }
 
         // Fell off platform
-        else if (this.transform.localPosition.y < 0 || this.transform.localPosition.y > 5)
+        else if (BaseRBody.transform.localPosition.y < 0 || BaseRBody.transform.localPosition.y > 5)
         {
+            if (DEBUG)
+                Debug.Log("invalid height");
+            EndEpisode();
+        }
+
+        // Toppled over
+        else if (BaseRBody.transform.up.y < 0.5f)
+        {
+            if (DEBUG)
+                Debug.Log("Toppled over");
             EndEpisode();
         }
     }

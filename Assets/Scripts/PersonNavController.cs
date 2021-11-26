@@ -6,12 +6,14 @@ using UnityEngine;
 // The person should sample possible goals, select one and choose its own behavior and path.
 public class PersonNavController : MonoBehaviour
 {
+    
     [Header("Debug Attributes (Leave unchanged)")]
     [Tooltip("Will be created if set to None")]
     public GameObject currentGoal;
     public float waitAtGoalTimeRemaining;
     public float kGoalReachedDist = 1.0f; // vertical distance included!
     public bool Waiting = false; // If true, the person is waiting at a goal.
+    public bool DEBUG = false;
 
     private bool addAdultColliders()
     {
@@ -62,7 +64,8 @@ public class PersonNavController : MonoBehaviour
         }
         // catch null reference except
         catch (System.NullReferenceException e) {
-            // Debug.Log("Error: " + e.Message);
+            if (DEBUG)
+                Debug.Log("PersonNavController: addAdultColliders: " + e.Message);
             return false;
         }
     }
@@ -116,7 +119,8 @@ public class PersonNavController : MonoBehaviour
         }
         // catch null reference except
         catch (System.NullReferenceException e) {
-            // Debug.Log("Error: " + e.Message);
+            if (DEBUG)
+                Debug.Log("PersonNavController: addChildColliders: " + e.Message);
             return false;
         }
     }

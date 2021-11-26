@@ -13,15 +13,8 @@ public class PersonNavController : MonoBehaviour
     public float kGoalReachedDist = 1.0f; // vertical distance included!
     public bool Waiting = false; // If true, the person is waiting at a goal.
 
-    void Start()
+    private bool addAdultColliders()
     {
-        // Add navmeshagent
-        UnityEngine.AI.NavMeshAgent nma = this.gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>() as UnityEngine.AI.NavMeshAgent;
-        nma.radius = 0.3f;
-        nma.height = 1.8f;
-        nma.speed = 1.0f;
-        // Add capsule colliders to important limbs and trunk (compromise between accuracy and precision)
-        // This is specific to rocketbox joint chain and will fail if gameobject hierarcy is different
         try {
         Transform bip = transform.Find("Bip01");
         Transform lforearm = transform.Find("Bip01").Find("Bip01 Pelvis").Find("Bip01 Spine").Find("Bip01 Spine1").Find("Bip01 Spine2").Find("Bip01 Neck").Find("Bip01 L Clavicle").Find("Bip01 L UpperArm").Find("Bip01 L Forearm");
@@ -65,13 +58,85 @@ public class PersonNavController : MonoBehaviour
         ccRFoot.center = new Vector3(-0.1f, 0.1f, 0.0f);
         ccRFoot.height = 0.2f;
         ccRFoot.direction = 1;
+        return true;
         }
         // catch null reference except
         catch (System.NullReferenceException e) {
-            Debug.Log("Error: " + e.Message);
-            // TODO: until I fix person colliders (add bones in scene hierarchy), this has to remain commented out.
-            // this.transform.SetParent(null);
+            // Debug.Log("Error: " + e.Message);
+            return false;
         }
+    }
+
+    private bool addChildColliders()
+    {
+        try {
+        Transform bip = transform.Find("Bip02");
+        Transform lforearm = transform.Find("Bip02").Find("Bip02 Pelvis").Find("Bip02 Spine").Find("Bip02 Spine1").Find("Bip02 Spine2").Find("Bip02 Neck").Find("Bip02 L Clavicle").Find("Bip02 L UpperArm").Find("Bip02 L Forearm");
+        Transform lcalf = transform.Find("Bip02").Find("Bip02 Pelvis").Find("Bip02 Spine").Find("Bip02 L Thigh").Find("Bip02 L Calf");
+        Transform lfoot = lcalf.Find("Bip02 L Foot");
+        Transform rforearm = transform.Find("Bip02").Find("Bip02 Pelvis").Find("Bip02 Spine").Find("Bip02 Spine1").Find("Bip02 Spine2").Find("Bip02 Neck").Find("Bip02 R Clavicle").Find("Bip02 R UpperArm").Find("Bip02 R Forearm");
+        Transform rcalf = transform.Find("Bip02").Find("Bip02 Pelvis").Find("Bip02 Spine").Find("Bip02 R Thigh").Find("Bip02 R Calf");
+        Transform rfoot = rcalf.Find("Bip02 R Foot");
+        CapsuleCollider ccBip = bip.gameObject.AddComponent<CapsuleCollider>() as CapsuleCollider;
+        ccBip.center = new Vector3(0.0f, 0.0f, 0.3f);
+        ccBip.radius = 0.15f;
+        ccBip.height = 1.0f;
+        ccBip.direction = 2;
+        CapsuleCollider ccLForearm = lforearm.gameObject.AddComponent<CapsuleCollider>() as CapsuleCollider;
+        ccLForearm.center = new Vector3(-0.15f, 0.0f, 0.0f);
+        ccLForearm.radius = 0.03f;
+        ccLForearm.height = 0.5f;
+        ccLForearm.direction = 0;
+        CapsuleCollider ccLCalf = lcalf.gameObject.AddComponent<CapsuleCollider>() as CapsuleCollider;
+        ccLCalf.center = new Vector3(-0.2f, 0.0f, 0.0f);
+        ccLCalf.radius = 0.06f;
+        ccLCalf.height = 0.5f;
+        ccLCalf.direction = 0;
+        CapsuleCollider ccLFoot = lfoot.gameObject.AddComponent<CapsuleCollider>() as CapsuleCollider;
+        ccLFoot.radius = 0.05f;
+        ccLFoot.center = new Vector3(-0.1f, 0.1f, 0.0f);
+        ccLFoot.height = 0.2f;
+        ccLFoot.direction = 1;
+        CapsuleCollider ccRForearm = rforearm.gameObject.AddComponent<CapsuleCollider>() as CapsuleCollider;
+        ccRForearm.center = new Vector3(-0.15f, 0.0f, 0.0f);
+        ccRForearm.radius = 0.03f;
+        ccRForearm.height = 0.5f;
+        ccRForearm.direction = 0;
+        CapsuleCollider ccRCalf = rcalf.gameObject.AddComponent<CapsuleCollider>() as CapsuleCollider;
+        ccRCalf.center = new Vector3(-0.2f, 0.0f, 0.0f);
+        ccRCalf.radius = 0.06f;
+        ccRCalf.height = 0.5f;
+        ccRCalf.direction = 0;
+        CapsuleCollider ccRFoot = rfoot.gameObject.AddComponent<CapsuleCollider>() as CapsuleCollider;
+        ccRFoot.radius = 0.05f;
+        ccRFoot.center = new Vector3(-0.1f, 0.1f, 0.0f);
+        ccRFoot.height = 0.2f;
+        ccRFoot.direction = 1;
+        return true;
+        }
+        // catch null reference except
+        catch (System.NullReferenceException e) {
+            // Debug.Log("Error: " + e.Message);
+            return false;
+        }
+    }
+
+    void Start()
+    {
+        // Add navmeshagent
+        UnityEngine.AI.NavMeshAgent nma = this.gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>() as UnityEngine.AI.NavMeshAgent;
+        nma.radius = 0.3f;
+        nma.height = 1.8f;
+        nma.speed = 1.0f;
+        // Add capsule colliders to important limbs and trunk (compromise between accuracy and precision)
+        // This is specific to rocketbox joint chain and will fail if gameobject hierarcy is different
+        if (addAdultColliders() || addChildColliders()) {
+
+        } else {
+            Debug.Log("Could not set up colliders on person. Moving it outside of hierarchy.");
+            this.transform.SetParent(null);
+        }
+        
     }
 
     // Called by the ML-Agents environment to tell the person to reset itself

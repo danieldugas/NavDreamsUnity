@@ -40,32 +40,54 @@ public class FixRocketboxMaxImport : AssetPostprocessor
 
     void OnPostprocessModel(GameObject g)
     {
-        if (g.transform.Find("Bip02") != null) RenameBip(g);
+        Debug.Log("FixRocketboxMaxImport.cs: post processing model");
+        //if (g.transform.Find("Bip02") != null) RenameBip(g);
 
-        Transform pelvis = g.transform.Find("Bip01").Find("Bip01 Pelvis");
-        if (pelvis == null) return;
-        Transform spine2 = pelvis.Find("Bip01 Spine").Find("Bip01 Spine1").Find("Bip01 Spine2");
-        Transform RClavicle = spine2.Find("Bip01 Neck").Find("Bip01 R Clavicle");
-        Transform LClavicle = spine2.Find("Bip01 Neck").Find("Bip01 L Clavicle");
-
-
-        if(!usingMixamoAnimations){
-            pelvis.Find("Bip01 Spine").Find("Bip01 L Thigh").parent = pelvis;
-            pelvis.Find("Bip01 Spine").Find("Bip01 R Thigh").parent = pelvis;
-            LClavicle.parent = spine2;
-            RClavicle.parent = spine2;
-
-
-            LClavicle.rotation = new Quaternion(-0.7215106f, 0, 0, 0.6924035f);
-            RClavicle.rotation = new Quaternion(0, -0.6925546f, 0.721365f, 0);
-            LClavicle.Find("Bip01 L UpperArm").rotation = new Quaternion(0, 0, 0, 0);
-            RClavicle.Find("Bip01 R UpperArm").rotation = new Quaternion(0, 0, 0, 0);
+        bool abandon = false;
+        Transform root = g.transform.Find("Bip01");
+        if (root == null) {
+            Debug.Log("Root node (Bip01) not found!");
+            abandon = true;
         }
+        Transform pelvis = null;
+        if (!abandon) {
+            pelvis = root.Find("Bip01 Pelvis");
+            if (pelvis == null) {
+                Debug.Log("Pelvis (Bip01 -> Bip01 Pelvsis) not found!");
+                abandon = true;
+            }
+        }
+        if (!abandon) {
+            Transform spine2 = pelvis.Find("Bip01 Spine").Find("Bip01 Spine1").Find("Bip01 Spine2");
+            Transform RClavicle = spine2.Find("Bip01 Neck").Find("Bip01 R Clavicle");
+            Transform LClavicle = spine2.Find("Bip01 Neck").Find("Bip01 L Clavicle");
+
+
+            if(usingMixamoAnimations){
+                Debug.Log("Keeping original bone transform hierarchy");
+            } else {
+                Debug.Log("Moving clavicles to child of spine2 and thighs to child of pelvis");
+                pelvis.Find("Bip01 Spine").Find("Bip01 L Thigh").parent = pelvis;
+                pelvis.Find("Bip01 Spine").Find("Bip01 R Thigh").parent = pelvis;
+                LClavicle.parent = spine2;
+                RClavicle.parent = spine2;
+
+
+                LClavicle.rotation = new Quaternion(-0.7215106f, 0, 0, 0.6924035f);
+                RClavicle.rotation = new Quaternion(0, -0.6925546f, 0.721365f, 0);
+                LClavicle.Find("Bip01 L UpperArm").rotation = new Quaternion(0, 0, 0, 0);
+                RClavicle.Find("Bip01 R UpperArm").rotation = new Quaternion(0, 0, 0, 0);
+            }
+        }
+        
+        
 
 
         var importer = (ModelImporter)assetImporter;
-        //If you need a humanoid avatar, change it here
+        //If you need a humanoid avatar, change it here // Human Generic
         importer.animationType = ModelImporterAnimationType.Human;
+        Debug.Log("animationType set to ");
+        Debug.Log(importer.animationType);
     }
     private void RenameBip(GameObject currentBone)
     {

@@ -18,7 +18,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -80,7 +81,27 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: OfficeChair_9-18-15_07.blend(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lamp
+      parentName: OfficeChair_9-18-15_07.blend(Clone)
+      position: {x: -4.0762453, y: 5.903862, z: -1.005454}
+      rotation: {x: 0.5232755, y: -0.34203398, z: 0.7269423, w: 0.28416634}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Camera
+      parentName: OfficeChair_9-18-15_07.blend(Clone)
+      position: {x: -7.4811316, y: 5.343665, z: 6.50764}
+      rotation: {x: 0.08579302, y: 0.893293, z: -0.21205638, w: 0.38691}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Office Chair
+      parentName: OfficeChair_9-18-15_07.blend(Clone)
+      position: {x: -0.024523336, y: -1.2952454, z: 0.39372748}
+      rotation: {x: 0.0000005591472, y: 0.7071068, z: 0.70710677, w: -0.0000005591473}
+      scale: {x: 2.5030844, y: 2.5030844, z: 2.5030844}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

@@ -15,7 +15,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftUpperLeg' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -76,8 +77,177 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Curtain_Rod
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rod_Back_2
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rod_End_2
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: window(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Curtain_Rod
+      parentName: window(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rod_End_1
+      parentName: Curtain_Rod
+      position: {x: 0.5490368, y: 0.7929587, z: 0.8681884}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rod_End_2
+      parentName: Curtain_Rod
+      position: {x: 0.5490368, y: 0.7929587, z: 0.35475102}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rod
+      parentName: Curtain_Rod
+      position: {x: 0.54904145, y: 0.79255515, z: 0.6117414}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ring
+      parentName: Curtain_Rod
+      position: {x: 0.54949707, y: 0.7896449, z: 0.82351494}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ring1
+      parentName: Curtain_Rod
+      position: {x: 0.54949707, y: 0.7896449, z: 0.75411147}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ring2
+      parentName: Curtain_Rod
+      position: {x: 0.54949707, y: 0.7896449, z: 0.7127755}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ring3
+      parentName: Curtain_Rod
+      position: {x: 0.54949707, y: 0.7896449, z: 0.48438966}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ring4
+      parentName: Curtain_Rod
+      position: {x: 0.54949707, y: 0.7896449, z: 0.4381192}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ring5
+      parentName: Curtain_Rod
+      position: {x: 0.54949707, y: 0.7896449, z: 0.39418277}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rod_Back_1
+      parentName: Curtain_Rod
+      position: {x: 0.5643202, y: 0.79166985, z: 0.84070194}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rod_Back_2
+      parentName: Curtain_Rod
+      position: {x: 0.5643202, y: 0.79166985, z: 0.38518804}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Curtains
+      parentName: window(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Curtain_2
+      parentName: Curtains
+      position: {x: 0.554277, y: 0.49666357, z: 0.77091575}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Curtain_1
+      parentName: Curtains
+      position: {x: 0.55728775, y: 0.49231586, z: 0.4412843}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame
+      parentName: window(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame2
+      parentName: Window_Frame
+      position: {x: 0.59354043, y: 0.62321234, z: 0.6164405}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame3
+      parentName: Window_Frame
+      position: {x: 0.59354043, y: 0.62598735, z: 0.6049404}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame4
+      parentName: Window_Frame
+      position: {x: 0.58373696, y: 0.20592827, z: 0.60981745}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame5
+      parentName: Window_Frame
+      position: {x: 0.5826664, y: 0.33295384, z: 0.6049404}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame6
+      parentName: Window_Frame
+      position: {x: 0.5826664, y: 0.34493726, z: 0.6164405}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame7
+      parentName: Window_Frame
+      position: {x: 0.5832789, y: 0.7735668, z: 0.60981745}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame8
+      parentName: Window_Frame
+      position: {x: 0.581692, y: 0.47734493, z: 0.8294313}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame9
+      parentName: Window_Frame
+      position: {x: 0.581692, y: 0.47734493, z: 0.39210013}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame10
+      parentName: Window_Frame
+      position: {x: 0.5635091, y: 0.18149813, z: 0.6120454}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame11
+      parentName: Window_Frame
+      position: {x: 0.581692, y: 0.15595768, z: 0.6120454}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame1
+      parentName: Window_Frame
+      position: {x: 0.5798626, y: 0.798978, z: 0.61265594}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Window_Frame 1
+      parentName: Window_Frame
+      position: {x: 0.5820884, y: 0.4715349, z: 0.60981745}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

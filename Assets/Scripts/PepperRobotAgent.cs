@@ -4,12 +4,17 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using UnityEngine.AI; // used to refer to NavMeshObstacle class
 
 /// Simulated Pepper for RL training,
 public class PepperRobotAgent : Agent
 {
     
-    public float forceMultiplier = 10;
+    [Tooltip("Higher force multiplier = faster acceleration to desired vel.")]
+    public float forceMultiplier = 10.0f;
+    public float torqueMultiplier = 10.0f;
+    public float velMultiplier = 1.0f;
+    public float rotvelMultiplier = 1.0f;
     public Transform Target;
 
     // Effectors (actions): Joint angles, force applied to base rigid body
@@ -34,8 +39,6 @@ public class PepperRobotAgent : Agent
     public Rigidbody BaseRBody;
     [Tooltip("A transform which will be moved to wherever the base is, but kept pointing up and on y=0 plane.")]
     public Transform BaseFootprint;
-    [Range(0, 1)]
-    public float TestJointValue;
     // People
     public PeopleNavController people;
     public EnvironmentController environment;
@@ -71,9 +74,8 @@ public class PepperRobotAgent : Agent
         people.OnEpisodeBegin(n_people, people_positions, people_goals);
         // Reset robot
         // Reset damage monitor for each collider
-        foreach (Rigidbody cl in GetComponentsInChildren<Rigidbody>())
+        foreach (ColliderDamageMonitor dm in GetComponentsInChildren<ColliderDamageMonitor>())
         {
-            ColliderDamageMonitor dm = cl.gameObject.GetComponent<ColliderDamageMonitor>();
             dm.damage = 0.0f;
         }
         // make all children rigidbodies kinematic
@@ -112,7 +114,7 @@ public class PepperRobotAgent : Agent
         float vel_in_left = -BaseRBody.velocity.x;
         float vel_in_trigtop = -BaseRBody.angularVelocity.y;
         if (DEBUG)
-            Debug.Log("goal_in_forward: " + goal_in_forward + " goal_in_left: " + goal_in_left + " vel_in_forward: " + vel_in_forward + " vel_in_left: " + vel_in_left + " vel_in_trigtop: " + vel_in_trigtop);
+            // Debug.Log("goal_in_forward: " + goal_in_forward + " goal_in_left: " + goal_in_left + " vel_in_forward: " + vel_in_forward + " vel_in_left: " + vel_in_left + " vel_in_trigtop: " + vel_in_trigtop);
 
         // Target and Agent positions
         sensor.AddObservation(goal_in_forward);
@@ -138,29 +140,48 @@ public class PepperRobotAgent : Agent
         commandVel.z = actionBuffers.ContinuousActions[0];
         Vector3 commandRot = Vector3.zero;
         commandRot.y = -actionBuffers.ContinuousActions[2];
-        Vector3 required_vel_adjustment = commandVel - BaseRBody.transform.InverseTransformDirection(BaseRBody.velocity); // local frame
-        Vector3 required_rot_adjustment = commandRot - BaseRBody.transform.InverseTransformDirection(BaseRBody.angularVelocity); // local frame
+
+        // invulnerable if stopped (otherwise people unfairly hurt the robot)
+        bool isMoving = commandVel.magnitude > 0.05f || commandRot.magnitude > 0.05f;
+        foreach (ColliderDamageMonitor dm in GetComponentsInChildren<ColliderDamageMonitor>())
+        {
+            if (isMoving)
+            {
+                dm.ignoreDamage = false;
+            } else {
+                dm.ignoreDamage = true;
+            }
+        }
+         NavMeshObstacle nmo = BaseRBody.gameObject.GetComponent<NavMeshObstacle>();
+        if (isMoving)
+        {
+            // people will avoid the robot less when it's moving
+            nmo.radius = 0.1f;
+            nmo.carving = false;
+        } else {
+            // people will try to avoid the robot more generously when it stops
+            nmo.radius = 0.3f;
+            nmo.carving = true;
+        }
+
+        // Apply command velocity control as a force
+        Vector3 required_vel_adjustment = commandVel * velMultiplier - BaseRBody.transform.InverseTransformDirection(BaseRBody.velocity); // local frame
+        Vector3 required_rot_adjustment = commandRot * rotvelMultiplier - BaseRBody.transform.InverseTransformDirection(BaseRBody.angularVelocity); // local frame
         Vector3 required_accel = required_vel_adjustment;
         Vector3 required_rot_accel = required_rot_adjustment;
         Vector3 required_force = required_accel * forceMultiplier;
-        Vector3 required_torque = required_rot_accel * forceMultiplier;
+        Vector3 required_torque = required_rot_accel * torqueMultiplier;
         Vector3 required_force_wf = BaseRBody.transform.TransformDirection(required_force);
         Vector3 required_torque_wf = BaseRBody.transform.TransformDirection(required_torque);
         required_force_wf.y = 0.0f; // we can't affect vertical acceleration
         required_torque_wf.x = 0.0f; // we can't control non-vertical-axis rotation
         required_torque_wf.z = 0.0f;
-        if (forceMultiplier != 0.0f) {
         BaseRBody.AddForce(required_force_wf);
         BaseRBody.AddTorque(-BaseRBody.transform.right * required_force.z * 0.2f);
         BaseRBody.AddTorque(required_torque_wf);
-        }
         // Move joint, as a test
-        JointSpring spring = LElbowRollParent.spring;
-        spring.targetPosition = TestJointValue * -90.0f;
-        LElbowRollParent.spring = spring;
-        JointSpring spring2 = LShoulderPitchParent.spring;
-        spring2.targetPosition = actionBuffers.ContinuousActions[3] * -90.0f;
-        LShoulderPitchParent.spring = spring2;
+        SetJointTarget(LShoulderPitchParent, (1.0f - actionBuffers.ContinuousActions[3]) * 90.0f);
+        SetJointTarget(RShoulderPitchParent, (1.0f - actionBuffers.ContinuousActions[3]) * 90.0f);
         // Move person as a test
         people.DoNavStep(environment, timestep);
         // Rewards
@@ -193,16 +214,22 @@ public class PepperRobotAgent : Agent
             EndEpisode();
         }
 
-        foreach (Rigidbody cl in GetComponentsInChildren<Rigidbody>())
+        foreach (ColliderDamageMonitor dm in GetComponentsInChildren<ColliderDamageMonitor>())
         {
-            ColliderDamageMonitor dm = cl.gameObject.GetComponent<ColliderDamageMonitor>();
             if (dm.damage > kMaxDamage)
             {
                 if (DEBUG)
-                    Debug.Log("Maximum damage from " + cl.gameObject.name);
+                    Debug.Log("Maximum damage from " + dm.gameObject.name);
                 EndEpisode();
             }
         }
+    }
+
+    private void SetJointTarget(HingeJoint joint, float target)
+    {
+        JointSpring spring2 = joint.spring;
+        spring2.targetPosition = target;
+        joint.spring = spring2;
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

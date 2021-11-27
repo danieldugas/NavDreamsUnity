@@ -15,7 +15,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftLowerLeg' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -76,8 +77,600 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: ArmarioPessoal
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: pCube72
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: pCube73
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: pCylinder20
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Cabinets(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armario_024
+      parentName: Cabinets(Clone)
+      position: {x: 2.9118426, y: 0.58007646, z: -0.05747547}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armario
+      parentName: Cabinets(Clone)
+      position: {x: 2.9118426, y: 0.58007646, z: 0.25327402}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube98
+      parentName: Armario
+      position: {x: -0.0584671, y: -0.058074567, z: -0.00053116796}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 5.651702, y: 0.2515258, z: 5.651702}
+    - name: pCube99
+      parentName: Armario
+      position: {x: -0.0584671, y: 0.008941116, z: -0.00053116796}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 5.651702, y: 0.2515258, z: 5.651702}
+    - name: pCube100
+      parentName: Armario
+      position: {x: -0.058466796, y: 0.079056434, z: -0.00053116796}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 5.651702, y: 0.2515258, z: 5.651702}
+    - name: pCube101
+      parentName: Armario
+      position: {x: 0.045097657, y: 0.079056434, z: -0.00053116796}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 5.651702, y: 0.2515258, z: 5.651702}
+    - name: pCube102
+      parentName: Armario
+      position: {x: 0.045097657, y: 0.008941116, z: -0.00053116796}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 5.651702, y: 0.2515258, z: 5.651702}
+    - name: pCube103
+      parentName: Armario
+      position: {x: 0.045097657, y: -0.058074567, z: -0.00053116796}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 5.651702, y: 0.2515258, z: 5.651702}
+    - name: pCube104
+      parentName: Armario
+      position: {x: -0.0008465576, y: 0.033215787, z: -0.0024057552}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 5.126028, y: 4.405508, z: 5.6434474}
+    - name: pCube105
+      parentName: Armario
+      position: {x: -0.0008465576, y: 0.10317005, z: -0.0024057552}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 5.126028, y: 4.405508, z: 5.6434474}
+    - name: pCube106
+      parentName: Armario
+      position: {x: -0.0008465576, y: -0.03373184, z: -0.0024057552}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 5.126028, y: 4.405508, z: 5.6434474}
+    - name: pCube107
+      parentName: Armario
+      position: {x: -0.0008465576, y: -0.10550472, z: -0.0024057552}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 5.126028, y: 4.405508, z: 5.6434474}
+    - name: pCube108
+      parentName: Armario
+      position: {x: -0.000888977, y: 0.11615608, z: -0.05043281}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.5813646, y: 0.8941056, z: 0.1325929}
+    - name: pCube109
+      parentName: Armario
+      position: {x: -0.000888977, y: 0.044944115, z: -0.05043281}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.5813646, y: 0.8941056, z: 0.1325929}
+    - name: pCube110
+      parentName: Armario
+      position: {x: -0.000888977, y: -0.023349037, z: -0.05043281}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.5813646, y: 0.8941056, z: 0.1325929}
+    - name: pCube111
+      parentName: Armario
+      position: {x: -0.000888977, y: -0.096408114, z: -0.05043281}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.5813646, y: 0.8941056, z: 0.1325929}
+    - name: pCube112
+      parentName: Armario
+      position: {x: -0.00005859375, y: 0.034207992, z: -0.079193935}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 3.567507, y: 0.29591236, z: 0.09192187}
+    - name: pCube113
+      parentName: Armario
+      position: {x: -0.00005859375, y: 0.10405399, z: -0.079193935}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 3.567507, y: 0.29591236, z: 0.09192187}
+    - name: pCube114
+      parentName: Armario
+      position: {x: -0.00005859375, y: -0.034657516, z: -0.079193935}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 3.567507, y: 0.29591236, z: 0.09192187}
+    - name: pCube115
+      parentName: Armario
+      position: {x: -0.00005859375, y: -0.10782455, z: -0.079193935}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 3.567507, y: 0.29591236, z: 0.09192187}
+    - name: pCube116
+      parentName: Armario
+      position: {x: -0.0008242798, y: 0.11615455, z: -0.06617749}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.4064951, y: 0.7374654, z: 0.037191123}
+    - name: pCube117
+      parentName: Armario
+      position: {x: -0.0008242798, y: 0.044925347, z: -0.06617749}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.4064951, y: 0.7374654, z: 0.037191123}
+    - name: pCube118
+      parentName: Armario
+      position: {x: -0.0008242798, y: -0.023385085, z: -0.06617749}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.4064951, y: 0.7374654, z: 0.037191123}
+    - name: pCube119
+      parentName: Armario
+      position: {x: -0.0008242798, y: -0.09642799, z: -0.06617749}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.4064951, y: 0.7374654, z: 0.037191123}
+    - name: pCube97
+      parentName: Armario
+      position: {x: -0.0007592773, y: 0, z: 0.09504059}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 6.4371843, y: 6.4371843, z: 6.4371843}
+    - name: ArmarioPessoal
+      parentName: Cabinets(Clone)
+      position: {x: 3.0618677, y: 0.58007646, z: 0.2546668}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube68
+      parentName: ArmarioPessoal
+      position: {x: -0, y: 0, z: 0.09133671}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 6.4371843, y: 6.4371843, z: 6.4371843}
+    - name: pCube69
+      parentName: ArmarioPessoal
+      position: {x: -0.0004284668, y: -0.012849273, z: 0.011695372}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube70
+      parentName: ArmarioPessoal
+      position: {x: -0.0004284668, y: -0.038745, z: 0.011695372}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube71
+      parentName: ArmarioPessoal
+      position: {x: -0.0004284668, y: -0.06464077, z: 0.011695372}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube72
+      parentName: ArmarioPessoal
+      position: {x: -0.026525574, y: 0.08076812, z: 0.024378642}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube73
+      parentName: ArmarioPessoal
+      position: {x: 0.02631439, y: 0.08076812, z: 0.024378642}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCylinder20
+      parentName: ArmarioPessoal
+      position: {x: -0.00017395019, y: 0.08062904, z: -0.016125161}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube74
+      parentName: ArmarioPessoal
+      position: {x: 0.000020446776, y: -0.00030426023, z: -0.04879775}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube75
+      parentName: ArmarioPessoal
+      position: {x: 0.00010162353, y: -0.06563755, z: -0.07371573}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube76
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: -0.055618245, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube77
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: -0.057840653, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube78
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: -0.060063057, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube79
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: -0.06228546, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube80
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: -0.06450783, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube81
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: -0.06673023, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube82
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: -0.068952635, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube83
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: -0.07117504, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube84
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: -0.07339744, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube85
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: -0.07578251, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: Parafuso22
+      parentName: ArmarioPessoal
+      position: {x: 0.017365111, y: -0.05366188, z: -0.11143352}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso23
+      parentName: ArmarioPessoal
+      position: {x: 0.017365111, y: -0.07769741, z: -0.11143352}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso24
+      parentName: ArmarioPessoal
+      position: {x: -0.01695282, y: -0.07769741, z: -0.11143352}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso25
+      parentName: ArmarioPessoal
+      position: {x: -0.01695282, y: -0.05366188, z: -0.11143352}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: pCube86
+      parentName: ArmarioPessoal
+      position: {x: 0.00010162353, y: 0.062208403, z: -0.07371573}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube87
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: 0.072227664, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube88
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: 0.0700053, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube89
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: 0.06778286, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube90
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: 0.06556049, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube91
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: 0.06333812, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube92
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: 0.061115682, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube93
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: 0.05889328, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube94
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: 0.056670874, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube95
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: 0.05444847, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube96
+      parentName: ArmarioPessoal
+      position: {x: 0.00022888184, y: 0.052063406, z: -0.092884146}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: Parafuso26
+      parentName: ArmarioPessoal
+      position: {x: 0.017365111, y: 0.07418404, z: -0.11143352}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso27
+      parentName: ArmarioPessoal
+      position: {x: 0.017365111, y: 0.050148543, z: -0.11143352}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso28
+      parentName: ArmarioPessoal
+      position: {x: -0.01695282, y: 0.050148543, z: -0.11143352}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso29
+      parentName: ArmarioPessoal
+      position: {x: -0.01695282, y: 0.07418404, z: -0.11143352}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: pCylinder21
+      parentName: ArmarioPessoal
+      position: {x: -0.021752318, y: -0.0049502943, z: -0.11036894}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.1876974, y: 0.12060717, z: 0.1876974}
+    - name: PortaUmbralFerrolho12
+      parentName: ArmarioPessoal
+      position: {x: 0.02700798, y: 0.0038283544, z: -0.11161588}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.87108094, y: 0.87108094, z: 0.87108094}
+    - name: PortaUmbralFerrolho11
+      parentName: ArmarioPessoal
+      position: {x: 0.02700798, y: 0.056692798, z: -0.11161588}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.87108094, y: 0.87108094, z: 0.87108094}
+    - name: PortaUmbralFerrolho13
+      parentName: ArmarioPessoal
+      position: {x: 0.02700798, y: -0.05860748, z: -0.11161588}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.87108094, y: 0.87108094, z: 0.87108094}
+    - name: ArmarioPessoal1
+      parentName: Cabinets(Clone)
+      position: {x: 3.0618677, y: 0.58007646, z: -0.054535516}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube68 1
+      parentName: ArmarioPessoal1
+      position: {x: -0, y: 0, z: 0.0007693438}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 6.4371843, y: 6.4371843, z: 6.4371843}
+    - name: pCube69 1
+      parentName: ArmarioPessoal1
+      position: {x: -0.0004284668, y: -0.012849273, z: 0.0009957075}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube70 1
+      parentName: ArmarioPessoal1
+      position: {x: -0.0004284668, y: -0.038745, z: 0.0009957075}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube71 1
+      parentName: ArmarioPessoal1
+      position: {x: -0.0004284668, y: -0.06464077, z: 0.0009957075}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube72 1
+      parentName: ArmarioPessoal1
+      position: {x: -0.026525574, y: 0.08076812, z: 0.012914172}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube73 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.02631439, y: 0.08076812, z: 0.012914172}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCylinder20 1
+      parentName: ArmarioPessoal1
+      position: {x: -0.00017395019, y: 0.08062904, z: 0.01298251}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube74 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.000020446776, y: -0.00030426023, z: -0.031381056}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube75 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00010162353, y: -0.06563755, z: -0.03048426}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube76 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: -0.055618245, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube77 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: -0.057840653, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube78 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: -0.060063057, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube79 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: -0.06228546, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube80 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: -0.06450783, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube81 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: -0.06673023, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube82 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: -0.068952635, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube83 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: -0.07117504, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube84 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: -0.07339744, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube85 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: -0.07578251, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: Parafuso22 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.017365111, y: -0.05366188, z: -0.03161284}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso23 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.017365111, y: -0.07769741, z: -0.03161284}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso24 1
+      parentName: ArmarioPessoal1
+      position: {x: -0.01695282, y: -0.07769741, z: -0.03161284}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso25 1
+      parentName: ArmarioPessoal1
+      position: {x: -0.01695282, y: -0.05366188, z: -0.03161284}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: pCube86 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00010162353, y: 0.062208403, z: -0.03048426}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube87 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: 0.072227664, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube88 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: 0.0700053, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube89 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: 0.06778286, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube90 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: 0.06556049, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube91 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: 0.06333812, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube92 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: 0.061115682, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube93 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: 0.05889328, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube94 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: 0.056670874, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube95 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: 0.05444847, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: pCube96 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.00022888184, y: 0.052063406, z: -0.03056201}
+      rotation: {x: 0.33311808, y: -0, z: -0, w: 0.94288516}
+      scale: {x: 1, y: 1.219746, z: 1.219746}
+    - name: Parafuso26 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.017365111, y: 0.07418404, z: -0.03161284}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso27 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.017365111, y: 0.050148543, z: -0.03161284}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso28 1
+      parentName: ArmarioPessoal1
+      position: {x: -0.01695282, y: 0.050148543, z: -0.03161284}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: Parafuso29 1
+      parentName: ArmarioPessoal1
+      position: {x: -0.01695282, y: 0.07418404, z: -0.03161284}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.08648296, y: 0.070987195, z: 0.08648296}
+    - name: pCylinder21 1
+      parentName: ArmarioPessoal1
+      position: {x: -0.021752318, y: -0.0049502943, z: -0.030548254}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.1876974, y: 0.12060717, z: 0.1876974}
+    - name: PortaUmbralFerrolho12 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.02700798, y: 0.0038283544, z: -0.031795196}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.87108094, y: 0.87108094, z: 0.87108094}
+    - name: PortaUmbralFerrolho11 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.02700798, y: 0.056692798, z: -0.031795196}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.87108094, y: 0.87108094, z: 0.87108094}
+    - name: PortaUmbralFerrolho13 1
+      parentName: ArmarioPessoal1
+      position: {x: 0.02700798, y: -0.05860748, z: -0.031795196}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.87108094, y: 0.87108094, z: 0.87108094}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

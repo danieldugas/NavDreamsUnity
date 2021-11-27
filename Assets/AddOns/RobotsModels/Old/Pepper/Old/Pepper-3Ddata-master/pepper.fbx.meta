@@ -1122,7 +1122,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -1184,7 +1185,382 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: pepper(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: black.003
+      parentName: pepper(Clone)
+      position: {x: -1217.7253, y: 482.63287, z: -1216.2439}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 10000.002, y: 10000.002, z: 10000.002}
+    - name: black.002
+      parentName: pepper(Clone)
+      position: {x: -4038.0066, y: 482.63287, z: -1216.2439}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 10000.002, y: 10000.002, z: 10000.002}
+    - name: black.001
+      parentName: pepper(Clone)
+      position: {x: -2564.697, y: 482.63257, z: -3514.1152}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 10000.002, y: 10000.002, z: 10000.002}
+    - name: milky_white.032
+      parentName: pepper(Clone)
+      position: {x: -4049.6165, y: 5030.058, z: -2196.029}
+      rotation: {x: 0.85811794, y: -0.50985324, z: -0.03831695, w: 0.047065012}
+      scale: {x: -10000.005, y: -10000.007, z: -10000.005}
+    - name: shiny_white.029
+      parentName: pepper(Clone)
+      position: {x: -4049.6165, y: 5030.058, z: -2196.029}
+      rotation: {x: 0.85811794, y: -0.50985324, z: -0.03831695, w: 0.047065012}
+      scale: {x: -10000.005, y: -10000.007, z: -10000.005}
+    - name: milky_white.031
+      parentName: pepper(Clone)
+      position: {x: -3963.726, y: 4871.903, z: -2192.8308}
+      rotation: {x: 0.85811794, y: -0.50985324, z: -0.03831695, w: 0.047065012}
+      scale: {x: -10000.005, y: -10000.007, z: -10000.005}
+    - name: shiny_white.028
+      parentName: pepper(Clone)
+      position: {x: -3963.726, y: 4871.903, z: -2192.8308}
+      rotation: {x: 0.85811794, y: -0.50985324, z: -0.03831695, w: 0.047065012}
+      scale: {x: -10000.005, y: -10000.007, z: -10000.005}
+    - name: shiny_white.027
+      parentName: pepper(Clone)
+      position: {x: -4260.5664, y: 4512.3696, z: -2302.4485}
+      rotation: {x: -0.57473725, y: 0.35147747, z: -0.45102027, w: 0.5854241}
+      scale: {x: -10000.005, y: -10000, z: -10000.005}
+    - name: milky_white.030
+      parentName: pepper(Clone)
+      position: {x: -4260.5664, y: 4512.3696, z: -2302.4485}
+      rotation: {x: -0.57473725, y: 0.35147747, z: -0.45102027, w: 0.5854241}
+      scale: {x: -10000.005, y: -10000, z: -10000.005}
+    - name: shiny_white.026
+      parentName: pepper(Clone)
+      position: {x: -4274.032, y: 4691.2026, z: -2307.3267}
+      rotation: {x: -0.515042, y: 0.4087409, z: -0.49915284, w: 0.56436604}
+      scale: {x: -10000, y: -10000, z: -10000.002}
+    - name: milky_white.029
+      parentName: pepper(Clone)
+      position: {x: -4274.032, y: 4691.2026, z: -2307.3267}
+      rotation: {x: -0.515042, y: 0.4087409, z: -0.49915284, w: 0.56436604}
+      scale: {x: -10000, y: -10000, z: -10000.002}
+    - name: milky_white.028
+      parentName: pepper(Clone)
+      position: {x: -4281.6953, y: 4664.7217, z: -2518.3406}
+      rotation: {x: -0.47352737, y: 0.48186505, z: -0.5167645, w: 0.52586335}
+      scale: {x: -10000.002, y: -10000.003, z: -10000.005}
+    - name: shiny_white.025
+      parentName: pepper(Clone)
+      position: {x: -4281.6953, y: 4664.7217, z: -2518.3406}
+      rotation: {x: -0.47352737, y: 0.48186505, z: -0.5167645, w: 0.52586335}
+      scale: {x: -10000.002, y: -10000.003, z: -10000.005}
+    - name: milky_white.027
+      parentName: pepper(Clone)
+      position: {x: -4281.421, y: 4484.749, z: -2515.2114}
+      rotation: {x: -0.47352737, y: 0.48186505, z: -0.5167645, w: 0.52586335}
+      scale: {x: -10000.002, y: -10000.003, z: -10000.005}
+    - name: shiny_white.024
+      parentName: pepper(Clone)
+      position: {x: -4281.421, y: 4484.749, z: -2515.2114}
+      rotation: {x: -0.47352737, y: 0.48186505, z: -0.5167645, w: 0.52586335}
+      scale: {x: -10000.002, y: -10000.003, z: -10000.005}
+    - name: shiny_white.023
+      parentName: pepper(Clone)
+      position: {x: -4272.075, y: 4522.3354, z: -2714.5942}
+      rotation: {x: -0.509095, y: 0.48160005, z: -0.4649589, w: 0.5410147}
+      scale: {x: -10000, y: -10000.002, z: -10000.001}
+    - name: milky_white.026
+      parentName: pepper(Clone)
+      position: {x: -4272.075, y: 4522.3354, z: -2714.5942}
+      rotation: {x: -0.509095, y: 0.48160005, z: -0.4649589, w: 0.5410147}
+      scale: {x: -10000, y: -10000.002, z: -10000.001}
+    - name: shiny_white.022
+      parentName: pepper(Clone)
+      position: {x: -4290.7505, y: 4699.8384, z: -2702.029}
+      rotation: {x: -0.49443948, y: 0.49386632, z: -0.45190838, w: 0.5544407}
+      scale: {x: -10000, y: -10000.002, z: -10000}
+    - name: milky_white.025
+      parentName: pepper(Clone)
+      position: {x: -4290.7505, y: 4699.8384, z: -2702.029}
+      rotation: {x: -0.49443948, y: 0.49386632, z: -0.45190838, w: 0.5544407}
+      scale: {x: -10000, y: -10000.002, z: -10000}
+    - name: milky_white.024
+      parentName: pepper(Clone)
+      position: {x: -4242.8164, y: 4761.0713, z: -2893.1138}
+      rotation: {x: -0.56260145, y: 0.5127285, z: -0.40876743, w: 0.50348616}
+      scale: {x: -10000.002, y: -10000, z: -10000}
+    - name: shiny_white.021
+      parentName: pepper(Clone)
+      position: {x: -4242.8164, y: 4761.0713, z: -2893.1138}
+      rotation: {x: -0.56260145, y: 0.5127285, z: -0.40876743, w: 0.50348616}
+      scale: {x: -10000.002, y: -10000, z: -10000}
+    - name: milky_white.023
+      parentName: pepper(Clone)
+      position: {x: -4228.528, y: 4575.391, z: -2899.6697}
+      rotation: {x: 0.5669289, y: -0.509179, z: 0.41318044, w: -0.49860835}
+      scale: {x: -10000, y: -9999.999, z: -10000}
+    - name: shiny_white.020
+      parentName: pepper(Clone)
+      position: {x: -4228.528, y: 4575.391, z: -2899.6697}
+      rotation: {x: 0.5669289, y: -0.509179, z: 0.41318044, w: -0.49860835}
+      scale: {x: -10000, y: -9999.999, z: -10000}
+    - name: shiny_white.019
+      parentName: pepper(Clone)
+      position: {x: -947.32, y: 4589.932, z: -2920.957}
+      rotation: {x: 0.6197931, y: 0.45906264, z: 0.46823385, w: 0.43113232}
+      scale: {x: 10000.004, y: 10000.001, z: 10000.003}
+    - name: milky_white.022
+      parentName: pepper(Clone)
+      position: {x: -947.32, y: 4589.932, z: -2920.957}
+      rotation: {x: 0.6197931, y: 0.45906264, z: 0.46823385, w: 0.43113232}
+      scale: {x: 10000.004, y: 10000.001, z: 10000.003}
+    - name: shiny_white.018
+      parentName: pepper(Clone)
+      position: {x: -922.11316, y: 4765.0337, z: -2887.7322}
+      rotation: {x: 0.6197931, y: 0.45906264, z: 0.46823385, w: 0.43113232}
+      scale: {x: 10000.004, y: 10000.001, z: 10000.003}
+    - name: milky_white.021
+      parentName: pepper(Clone)
+      position: {x: -922.11316, y: 4765.0337, z: -2887.7322}
+      rotation: {x: 0.6197931, y: 0.45906264, z: 0.46823385, w: 0.43113232}
+      scale: {x: 10000.004, y: 10000.001, z: 10000.003}
+    - name: milky_white.020
+      parentName: pepper(Clone)
+      position: {x: -874.18024, y: 4703.188, z: -2700.829}
+      rotation: {x: 0.5533875, y: 0.44018444, z: 0.50434417, w: 0.4956177}
+      scale: {x: 10000.002, y: 10000.005, z: 10000.003}
+    - name: shiny_white.017
+      parentName: pepper(Clone)
+      position: {x: -874.18024, y: 4703.188, z: -2700.829}
+      rotation: {x: 0.5533875, y: 0.44018444, z: 0.50434417, w: 0.4956177}
+      scale: {x: 10000.002, y: 10000.005, z: 10000.003}
+    - name: milky_white.019
+      parentName: pepper(Clone)
+      position: {x: -892.8556, y: 4525.509, z: -2722.7654}
+      rotation: {x: 0.5533875, y: 0.44018444, z: 0.50434417, w: 0.4956177}
+      scale: {x: 10000.002, y: 10000.005, z: 10000.003}
+    - name: shiny_white.016
+      parentName: pepper(Clone)
+      position: {x: -892.8556, y: 4525.509, z: -2722.7654}
+      rotation: {x: 0.5533875, y: 0.44018444, z: 0.50434417, w: 0.4956177}
+      scale: {x: 10000.002, y: 10000.005, z: 10000.003}
+    - name: shiny_white.015
+      parentName: pepper(Clone)
+      position: {x: -883.5096, y: 4486.0557, z: -2515.2114}
+      rotation: {x: 0.47352743, y: 0.481865, z: 0.5167645, w: 0.5258634}
+      scale: {x: 10000.002, y: 10000.002, z: 10000.004}
+    - name: milky_white.018
+      parentName: pepper(Clone)
+      position: {x: -883.5096, y: 4486.0557, z: -2515.2114}
+      rotation: {x: 0.47352743, y: 0.481865, z: 0.5167645, w: 0.5258634}
+      scale: {x: 10000.002, y: 10000.002, z: 10000.004}
+    - name: shiny_white.014
+      parentName: pepper(Clone)
+      position: {x: -883.2354, y: 4666.0283, z: -2518.3413}
+      rotation: {x: 0.47352743, y: 0.481865, z: 0.5167645, w: 0.5258634}
+      scale: {x: 10000.002, y: 10000.002, z: 10000.004}
+    - name: milky_white.017
+      parentName: pepper(Clone)
+      position: {x: -883.2354, y: 4666.0283, z: -2518.3413}
+      rotation: {x: 0.47352743, y: 0.481865, z: 0.5167645, w: 0.5258634}
+      scale: {x: 10000.002, y: 10000.002, z: 10000.004}
+    - name: milky_white.016
+      parentName: pepper(Clone)
+      position: {x: -890.897, y: 4692.903, z: -2318.631}
+      rotation: {x: 0.4813947, y: 0.43704107, z: 0.47457117, w: 0.5933267}
+      scale: {x: 10000.002, y: 10000.006, z: 10000.002}
+    - name: shiny_white.013
+      parentName: pepper(Clone)
+      position: {x: -890.897, y: 4692.903, z: -2318.631}
+      rotation: {x: 0.4813947, y: 0.43704107, z: 0.47457117, w: 0.5933267}
+      scale: {x: 10000.002, y: 10000.006, z: 10000.002}
+    - name: milky_white.015
+      parentName: pepper(Clone)
+      position: {x: -921.057, y: 4515.796, z: -2307.5244}
+      rotation: {x: 0.4813947, y: 0.43704107, z: 0.47457117, w: 0.5933267}
+      scale: {x: 10000.002, y: 10000.006, z: 10000.002}
+    - name: shiny_white.012
+      parentName: pepper(Clone)
+      position: {x: -921.057, y: 4515.796, z: -2307.5244}
+      rotation: {x: 0.4813947, y: 0.43704107, z: 0.47457117, w: 0.5933267}
+      scale: {x: 10000.002, y: 10000.006, z: 10000.002}
+    - name: shiny_white.011
+      parentName: pepper(Clone)
+      position: {x: -1223.6823, y: 4861.7437, z: -2211.1724}
+      rotation: {x: 0.04706568, y: 0.038316984, z: 0.5098533, w: 0.8581178}
+      scale: {x: 9999.999, y: 10000, z: 10000.001}
+    - name: milky_white.014
+      parentName: pepper(Clone)
+      position: {x: -1223.6823, y: 4861.7437, z: -2211.1724}
+      rotation: {x: 0.04706568, y: 0.038316984, z: 0.5098533, w: 0.8581178}
+      scale: {x: 9999.999, y: 10000, z: 10000.001}
+    - name: shiny_white.010
+      parentName: pepper(Clone)
+      position: {x: -1137.7932, y: 5019.899, z: -2214.3706}
+      rotation: {x: 0.04706568, y: 0.038316984, z: 0.5098533, w: 0.8581178}
+      scale: {x: 9999.999, y: 10000, z: 10000.001}
+    - name: milky_white.013
+      parentName: pepper(Clone)
+      position: {x: -1137.7932, y: 5019.899, z: -2214.3706}
+      rotation: {x: 0.04706568, y: 0.038316984, z: 0.5098533, w: 0.8581178}
+      scale: {x: 9999.999, y: 10000, z: 10000.001}
+    - name: blue_led
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 8008.524, z: -2011.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: black
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 8008.524, z: -2011.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: transparent
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 8008.524, z: -2011.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: shiny_white.009
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 8008.524, z: -2011.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: milky_white.012
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 8008.524, z: -2011.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: shiny_white.008
+      parentName: pepper(Clone)
+      position: {x: -933.9131, y: 5493.5225, z: -2571.3171}
+      rotation: {x: 0.00000001545431, y: 0.000000015454308, z: 0.7071067, w: 0.7071068}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: shiny_white.007
+      parentName: pepper(Clone)
+      position: {x: -4243.913, y: 5493.5225, z: -2571.3171}
+      rotation: {x: 0.7071068, y: 0.7071067, z: 0.000000030908616, w: 0.000000030908623}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: shiny_white.006
+      parentName: pepper(Clone)
+      position: {x: -4188.912, y: 8820.868, z: -2589.6843}
+      rotation: {x: -0.024677651, y: 0.024677638, z: 0.706676, w: 0.70667607}
+      scale: {x: 10000, y: 10000.001, z: 10000}
+    - name: milky_white.011
+      parentName: pepper(Clone)
+      position: {x: -4188.912, y: 8820.868, z: -2589.6843}
+      rotation: {x: -0.024677651, y: 0.024677638, z: 0.706676, w: 0.70667607}
+      scale: {x: 10000, y: 10000.001, z: 10000}
+    - name: milky_white.010
+      parentName: pepper(Clone)
+      position: {x: -4188.912, y: 8820.868, z: -2589.6843}
+      rotation: {x: -0.024677651, y: 0.024677638, z: 0.706676, w: 0.70667607}
+      scale: {x: 10000, y: 10000.001, z: 10000}
+    - name: shiny_white.005
+      parentName: pepper(Clone)
+      position: {x: -988.9133, y: 8820.868, z: -2589.6843}
+      rotation: {x: 0.706676, y: 0.7066761, z: -0.024676908, w: 0.024676913}
+      scale: {x: 10000, y: 10000.001, z: 10000}
+    - name: milky_white.009
+      parentName: pepper(Clone)
+      position: {x: -988.9133, y: 8820.868, z: -2589.6843}
+      rotation: {x: 0.706676, y: 0.7066761, z: -0.024676908, w: 0.024676913}
+      scale: {x: 10000, y: 10000.001, z: 10000}
+    - name: milky_white.008
+      parentName: pepper(Clone)
+      position: {x: -988.9133, y: 8820.868, z: -2589.6843}
+      rotation: {x: 0.706676, y: 0.7066761, z: -0.024676908, w: 0.024676913}
+      scale: {x: 10000, y: 10000.001, z: 10000}
+    - name: milky_white.007
+      parentName: pepper(Clone)
+      position: {x: -4238.9136, y: 6988.5234, z: -2581.3171}
+      rotation: {x: -0.000000049169003, y: -0.000000049169, z: 0.7071067, w: 0.7071068}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: milky_white.006
+      parentName: pepper(Clone)
+      position: {x: -938.9133, y: 6988.5234, z: -2581.3171}
+      rotation: {x: 0.7071068, y: 0.7071067, z: 0.000000030908616, w: 0.000000030908623}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: shiny_white.004
+      parentName: pepper(Clone)
+      position: {x: -4238.9136, y: 6988.5234, z: -2581.3171}
+      rotation: {x: -0.000000049169003, y: -0.000000049169, z: 0.7071067, w: 0.7071068}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: milky_white.005
+      parentName: pepper(Clone)
+      position: {x: -4238.9136, y: 6988.5234, z: -2581.3171}
+      rotation: {x: -0.000000049169003, y: -0.000000049169, z: 0.7071067, w: 0.7071068}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: shiny_white.003
+      parentName: pepper(Clone)
+      position: {x: -938.9133, y: 6988.5234, z: -2581.3171}
+      rotation: {x: 0.7071068, y: 0.7071067, z: 0.000000030908616, w: 0.000000030908623}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: milky_white.004
+      parentName: pepper(Clone)
+      position: {x: -938.9133, y: 6988.5234, z: -2581.3171}
+      rotation: {x: 0.7071068, y: 0.7071067, z: 0.000000030908616, w: 0.000000030908623}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: milky_white.003
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 3058.5217, z: -2011.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: shiny_white.002
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 3058.5217, z: -2011.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: milky_white.002
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 6658.5234, z: -2011.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: shiny_white.001
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 5858.522, z: -2011.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: milky_white.001
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 5858.522, z: -2011.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: head_speaker_tex
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 9608.522, z: -2361.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: shiny_white
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 9608.522, z: -2361.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: milky_white
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 9608.522, z: -2361.3171}
+      rotation: {x: 0.7071068, y: 0.00000022197246, z: -0.70710677, w: 0.00000022197248}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: face_tex
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 9608.522, z: -2361.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: ear_tex
+      parentName: pepper(Clone)
+      position: {x: -2588.9138, y: 9608.522, z: -2361.3171}
+      rotation: {x: 0.7071068, y: 0.000000053385076, z: -0.70710677, w: 0.00000005338508}
+      scale: {x: 10000.001, y: 10000.001, z: 10000.001}
+    - name: Lamp
+      parentName: pepper(Clone)
+      position: {x: -42087.58, y: 37559.473, z: 32946.92}
+      rotation: {x: 0.52327543, y: -0.34203395, z: 0.7269423, w: 0.28416628}
+      scale: {x: 10000.002, y: 10000.002, z: 10000.002}
+    - name: Camera
+      parentName: pepper(Clone)
+      position: {x: -74811.32, y: 53436.652, z: 65076.406}
+      rotation: {x: 0.08579301, y: 0.893293, z: -0.2120564, w: 0.38690993}
+      scale: {x: 10000.002, y: 10000.002, z: 10000.002}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

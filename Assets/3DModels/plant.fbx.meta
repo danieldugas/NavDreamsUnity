@@ -18,7 +18,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -80,7 +81,27 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: plant(Clone)
+      parentName: 
+      position: {x: -0.009519471, y: 0.63357043, z: -0.013661942}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cylinder001
+      parentName: plant(Clone)
+      position: {x: 0.011500268, y: -0.016808214, z: -0.6334448}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 6.7754397, y: 6.7754397, z: 6.7754397}
+    - name: Cylinder002
+      parentName: plant(Clone)
+      position: {x: 0.011166653, y: -0.016557854, z: -0.43950558}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 5.9509945, y: 5.9509945, z: 5.9509945}
+    - name: plant
+      parentName: plant(Clone)
+      position: {x: 0.009701315, y: -0.020961368, z: -0.6064329}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+      scale: {x: 55.346924, y: 55.346924, z: 55.346924}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.38073993, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.35872743, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -74545,7 +74545,10 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
-  forceMultiplier: 100
+  forceMultiplier: 10
+  torqueMultiplier: 10
+  velMultiplier: 1
+  rotvelMultiplier: 3
   Target: {fileID: 818909459}
   HeadYawParent: {fileID: 8470256869808986676}
   HeadPitchParent: {fileID: 2733472263583306075}
@@ -74566,7 +74569,6 @@ MonoBehaviour:
   KneePitchParent: {fileID: 1862208856061271173}
   BaseRBody: {fileID: 3702157310429511340}
   BaseFootprint: {fileID: 1055019100}
-  TestJointValue: 0
   people: {fileID: 1645272922}
   environment: {fileID: 432182423}
   FrontColorCamera: {fileID: 313546800741252743}
@@ -74636,7 +74638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DecisionPeriod: 10
-  TakeActionsBetweenDecisions: 0
+  TakeActionsBetweenDecisions: 1
 --- !u!1 &2436568956290078946
 GameObject:
   m_ObjectHideFlags: 0
@@ -98068,21 +98070,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8116957822976859902
-MonoBehaviour:
+--- !u!208 &8116957822976859902
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8116957822976859901}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53d6de531d7f5db0bb4d8f15966611e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  parent: {fileID: 0}
-  DEBUG: 0
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.1, y: 1, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &8121789482159612436
 GameObject:
   m_ObjectHideFlags: 0

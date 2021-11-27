@@ -15,7 +15,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -77,7 +78,57 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Wall10mWith4Windows(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube
+      parentName: Wall10mWith4Windows(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube.001
+      parentName: Wall10mWith4Windows(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube.002
+      parentName: Wall10mWith4Windows(Clone)
+      position: {x: 0.30516106, y: 1.0106686, z: 4.974198}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.084176004, y: 5.5479035, z: 1.9984491}
+    - name: Cube.003
+      parentName: Wall10mWith4Windows(Clone)
+      position: {x: -2.1243777e-16, y: 1.0121975, z: 0.5823602}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 0.42609915, z: 1.850275}
+    - name: Cube.004
+      parentName: Wall10mWith4Windows(Clone)
+      position: {x: -2.1243777e-16, y: 1.0121975, z: 2.9053683}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 0.42609915, z: 1.850275}
+    - name: Cube.005
+      parentName: Wall10mWith4Windows(Clone)
+      position: {x: -2.1243777e-16, y: 1.0121975, z: 3.8955553}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 0.42609915, z: 1.850275}
+    - name: Cube.006
+      parentName: Wall10mWith4Windows(Clone)
+      position: {x: -2.1243777e-16, y: 1.0121975, z: 7.1262684}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 0.42609915, z: 1.850275}
+    - name: Cube.007
+      parentName: Wall10mWith4Windows(Clone)
+      position: {x: -2.1243777e-16, y: 1.0121975, z: 6.136081}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 0.42609915, z: 1.850275}
+    - name: Cube.008
+      parentName: Wall10mWith4Windows(Clone)
+      position: {x: -2.1243777e-16, y: 1.0121975, z: 9.303898}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 0.42609915, z: 1.850275}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

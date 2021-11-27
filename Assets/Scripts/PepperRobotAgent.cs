@@ -51,6 +51,13 @@ public class PepperRobotAgent : Agent
     // Start is called before the first frame update
     void Start()
     {
+        // Creat damage monitor for each collider
+        foreach (Rigidbody cl in GetComponentsInChildren<Rigidbody>())
+        {
+            ColliderDamageMonitor dm = cl.gameObject.AddComponent<ColliderDamageMonitor>() as ColliderDamageMonitor;
+            dm.parent = gameObject;
+            dm.DEBUG = DEBUG;
+        }
     }
 
     public override void OnEpisodeBegin()
@@ -63,6 +70,12 @@ public class PepperRobotAgent : Agent
         // Reset people
         people.OnEpisodeBegin(n_people, people_positions, people_goals);
         // Reset robot
+        // Reset damage monitor for each collider
+        foreach (Rigidbody cl in GetComponentsInChildren<Rigidbody>())
+        {
+            ColliderDamageMonitor dm = cl.gameObject.GetComponent<ColliderDamageMonitor>();
+            dm.damage = 0.0f;
+        }
         // make all children rigidbodies kinematic
         foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
         {
@@ -120,11 +133,11 @@ public class PepperRobotAgent : Agent
         //Debug.Log(Time.time);
         //Debug.Log(timestep);
         // Actions, size = 2
-        Vector3 commandVel = Vector3.zero;
-        commandVel.x = actionBuffers.ContinuousActions[0];
-        commandVel.z = actionBuffers.ContinuousActions[1];
+        Vector3 commandVel = Vector3.zero; // commanded velocity in base unity frame
+        commandVel.x = -actionBuffers.ContinuousActions[1];
+        commandVel.z = actionBuffers.ContinuousActions[0];
         Vector3 commandRot = Vector3.zero;
-        commandRot.y = actionBuffers.ContinuousActions[2];
+        commandRot.y = -actionBuffers.ContinuousActions[2];
         Vector3 required_vel_adjustment = commandVel - BaseRBody.transform.InverseTransformDirection(BaseRBody.velocity); // local frame
         Vector3 required_rot_adjustment = commandRot - BaseRBody.transform.InverseTransformDirection(BaseRBody.angularVelocity); // local frame
         Vector3 required_accel = required_vel_adjustment;
@@ -153,8 +166,10 @@ public class PepperRobotAgent : Agent
         // Rewards
         float distanceToTarget = Vector3.Distance(BaseRBody.transform.position, Target.position);
 
+        float kGoalRadius = 1.42f;
+        float kMaxDamage = 1.0f; // measured as sum of impact velocity [m/s]
         // Reached target
-        if (distanceToTarget < 1.42f)
+        if (distanceToTarget < kGoalRadius)
         {
             if (DEBUG)
                 Debug.Log("Reached target");
@@ -177,20 +192,31 @@ public class PepperRobotAgent : Agent
                 Debug.Log("Toppled over");
             EndEpisode();
         }
+
+        foreach (Rigidbody cl in GetComponentsInChildren<Rigidbody>())
+        {
+            ColliderDamageMonitor dm = cl.gameObject.GetComponent<ColliderDamageMonitor>();
+            if (dm.damage > kMaxDamage)
+            {
+                if (DEBUG)
+                    Debug.Log("Maximum damage from " + cl.gameObject.name);
+                EndEpisode();
+            }
+        }
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
 {
     var continuousActionsOut = actionsOut.ContinuousActions;
-    continuousActionsOut[0] = Input.GetAxis("Horizontal");
-    continuousActionsOut[1] = Input.GetAxis("Vertical");
+    continuousActionsOut[1] = -Input.GetAxis("Horizontal");
+    continuousActionsOut[0] = Input.GetAxis("Vertical");
     if (Input.GetButton("Fire1"))
     {
-        continuousActionsOut[2] = -1.0f;
+        continuousActionsOut[2] = 1.0f;
     }
     if (Input.GetButton("Fire2"))
     {
-        continuousActionsOut[2] = 1.0f;
+        continuousActionsOut[2] = -1.0f;
     }
     if (Input.GetButton("Jump"))
     {

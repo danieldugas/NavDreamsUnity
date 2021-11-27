@@ -74572,6 +74572,7 @@ MonoBehaviour:
   FrontColorCamera: {fileID: 313546800741252743}
   image_width: 64
   image_height: 64
+  DEBUG: 0
 --- !u!114 &2436359696218328213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77389,7 +77390,7 @@ GameObject:
   - component: {fileID: 313546800741252743}
   m_Layer: 8
   m_Name: CameraTop_frame
-  m_TagString: Sensor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96423,7 +96424,7 @@ GameObject:
   - component: {fileID: 2411899160202487498}
   m_Layer: 8
   m_Name: CameraDepth_frame
-  m_TagString: Sensor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98059,6 +98060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5526532642966578971}
   - component: {fileID: 3702157310429511340}
+  - component: {fileID: 8116957822976859902}
   m_Layer: 8
   m_Name: Tibia
   m_TagString: Untagged
@@ -98066,6 +98068,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8116957822976859902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8116957822976859901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d6de531d7f5db0bb4d8f15966611e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  parent: {fileID: 0}
+  DEBUG: 0
 --- !u!1 &8121789482159612436
 GameObject:
   m_ObjectHideFlags: 0

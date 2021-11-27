@@ -9,7 +9,7 @@ public class PeopleNavController : MonoBehaviour
     {
         int i = 0;
         // Get starting positions for people
-        foreach (PersonNavController person in transform.GetComponentsInChildren<PersonNavController>())
+        foreach (PersonNavController person in transform.GetComponentsInChildren<PersonNavController>(true))
         {
             if (i >= n_people)
             {
@@ -28,7 +28,7 @@ public class PeopleNavController : MonoBehaviour
 
     public int GetMaxPeopleCount()
     {
-        return transform.GetComponentsInChildren<PersonNavController>().Length;
+        return transform.GetComponentsInChildren<PersonNavController>(true).Length;
     }
 
     public void DoNavStep(EnvironmentController environmentController, float timestep)

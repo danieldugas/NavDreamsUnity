@@ -9,6 +9,9 @@ using UnityEngine.AI; // used to refer to NavMeshObstacle class
 /// Simulated Pepper for RL training,
 public class PepperRobotAgent : Agent
 {
+    public bool DEBUG = false;
+    public bool DEBUGOBS = false;
+    public int currentDifficulty = 0;
     
     [Tooltip("Higher force multiplier = faster acceleration to desired vel.")]
     public float forceMultiplier = 10.0f;
@@ -47,8 +50,6 @@ public class PepperRobotAgent : Agent
     public int image_width = 64;
     public int image_height = 64;
 
-    public bool DEBUG = false;
-
     private CameraSensor cameraSensor;
     private float LastActionTime = 0.0f;
     // Start is called before the first frame update
@@ -66,10 +67,9 @@ public class PepperRobotAgent : Agent
     public override void OnEpisodeBegin()
     {
         int n_robots = 1;
-        int n_people = people.GetMaxPeopleCount();
-        int n_difficulty = 1;
+        int n_people = Mathf.Clamp(currentDifficulty, 0, people.GetMaxPeopleCount());
         // Reset the environment
-        environment.OnEpisodeBegin(n_robots, n_difficulty, n_people, out Vector3[] robot_positions, out Vector3[] robot_goals, out Vector3[] people_positions, out Vector3[] people_goals);
+        environment.OnEpisodeBegin(n_robots, currentDifficulty, n_people, out Vector3[] robot_positions, out Vector3[] robot_goals, out Vector3[] people_positions, out Vector3[] people_goals);
         // Reset people
         people.OnEpisodeBegin(n_people, people_positions, people_goals);
         // Reset robot
@@ -113,8 +113,8 @@ public class PepperRobotAgent : Agent
         float vel_in_forward = BaseRBody.velocity.z;
         float vel_in_left = -BaseRBody.velocity.x;
         float vel_in_trigtop = -BaseRBody.angularVelocity.y;
-        if (DEBUG)
-            // Debug.Log("goal_in_forward: " + goal_in_forward + " goal_in_left: " + goal_in_left + " vel_in_forward: " + vel_in_forward + " vel_in_left: " + vel_in_left + " vel_in_trigtop: " + vel_in_trigtop);
+        if (DEBUGOBS)
+            Debug.Log("goal_in_forward: " + goal_in_forward + " goal_in_left: " + goal_in_left + " vel_in_forward: " + vel_in_forward + " vel_in_left: " + vel_in_left + " vel_in_trigtop: " + vel_in_trigtop);
 
         // Target and Agent positions
         sensor.AddObservation(goal_in_forward);
@@ -195,6 +195,7 @@ public class PepperRobotAgent : Agent
             if (DEBUG)
                 Debug.Log("Reached target");
             SetReward(1.0f);
+            currentDifficulty = Mathf.Clamp(currentDifficulty + 1, 0, 50);
             EndEpisode();
         }
 
@@ -203,6 +204,7 @@ public class PepperRobotAgent : Agent
         {
             if (DEBUG)
                 Debug.Log("invalid height");
+            currentDifficulty = Mathf.Clamp(currentDifficulty - 1, 0, 50);
             EndEpisode();
         }
 
@@ -211,6 +213,7 @@ public class PepperRobotAgent : Agent
         {
             if (DEBUG)
                 Debug.Log("Toppled over");
+            currentDifficulty = Mathf.Clamp(currentDifficulty - 1, 0, 50);
             EndEpisode();
         }
 
@@ -220,6 +223,7 @@ public class PepperRobotAgent : Agent
             {
                 if (DEBUG)
                     Debug.Log("Maximum damage from " + dm.gameObject.name);
+                currentDifficulty = Mathf.Clamp(currentDifficulty - 1, 0, 50);
                 EndEpisode();
             }
         }

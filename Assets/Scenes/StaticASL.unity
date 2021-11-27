@@ -74545,6 +74545,9 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
+  DEBUG: 0
+  DEBUGOBS: 0
+  currentDifficulty: 0
   forceMultiplier: 10
   torqueMultiplier: 10
   velMultiplier: 1
@@ -74574,7 +74577,6 @@ MonoBehaviour:
   FrontColorCamera: {fileID: 313546800741252743}
   image_width: 64
   image_height: 64
-  DEBUG: 0
 --- !u!114 &2436359696218328213
 MonoBehaviour:
   m_ObjectHideFlags: 0

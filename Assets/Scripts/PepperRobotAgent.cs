@@ -18,6 +18,8 @@ public class PepperRobotAgent : Agent
     public float torqueMultiplier = 10.0f;
     public float velMultiplier = 1.0f;
     public float rotvelMultiplier = 1.0f;
+    public float goalRadius = 1.42f;
+    public float maxDamage = 0.5f; // measured as sum of impact velocity [m/s]
     public Transform Target;
 
     // Effectors (actions): Joint angles, force applied to base rigid body
@@ -187,14 +189,12 @@ public class PepperRobotAgent : Agent
         // Rewards
         float distanceToTarget = Vector3.Distance(BaseRBody.transform.position, Target.position);
 
-        float kGoalRadius = 1.42f;
-        float kMaxDamage = 1.0f; // measured as sum of impact velocity [m/s]
         // Reached target
-        if (distanceToTarget < kGoalRadius)
+        if (distanceToTarget < goalRadius)
         {
             if (DEBUG)
                 Debug.Log("Reached target");
-            SetReward(1.0f);
+            SetReward(100.0f);
             currentDifficulty = Mathf.Clamp(currentDifficulty + 1, 0, 50);
             EndEpisode();
         }
@@ -219,7 +219,7 @@ public class PepperRobotAgent : Agent
 
         foreach (ColliderDamageMonitor dm in GetComponentsInChildren<ColliderDamageMonitor>())
         {
-            if (dm.damage > kMaxDamage)
+            if (dm.damage > maxDamage)
             {
                 if (DEBUG)
                     Debug.Log("Maximum damage from " + dm.gameObject.name);

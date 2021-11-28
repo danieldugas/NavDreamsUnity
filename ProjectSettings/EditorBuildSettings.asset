@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StaticASL.unity
+    guid: eef970ff957c7d49588df9ae68699e71
   m_configObjects: {}

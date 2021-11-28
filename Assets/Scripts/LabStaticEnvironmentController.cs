@@ -22,7 +22,10 @@ public class LabStaticEnvironmentController : EnvironmentController
             child.gameObject.GetComponent<SpawnPoint>().occupied = false;
         }
         
-        // this is a static environment - nothing to do
+        // this is a static environment - nothing to do with objects / walls
+        // fill positions and goals
+        float minRobotGoalDist = 2.0f;
+        float maxRobotGoalDist = 7.0f + difficulty;
         robot_positions = new Vector3[n_robots];
         robot_goals = new Vector3[n_robots];
         people_positions = new Vector3[n_people];
@@ -47,7 +50,7 @@ public class LabStaticEnvironmentController : EnvironmentController
         }
         for (int i = 0; i < n_robots; i++)
         {
-            robot_goals[i] = SampleSpawn();
+            robot_goals[i] = SampleSpawnWithinSphereShell(minRobotGoalDist, maxRobotGoalDist, robot_positions[i]);
         }
 
     }
@@ -84,6 +87,42 @@ public class LabStaticEnvironmentController : EnvironmentController
         {
             Debug.LogError("No free spawn points in scene");
             return Vector3.zero;
+        }
+        if (occupy) {
+            spawn.gameObject.GetComponent<SpawnPoint>().occupied = true;
+        }
+        Vector3 pos = spawn.position;
+        return pos;
+    }
+
+    private Vector3 SampleSpawnWithinSphereShell(float minRadius, float maxRadius, Vector3 center, bool occupy=false)
+    {
+        // list all children of the spawns object
+        // and pick one at random
+        int n_spawns = spawns.transform.childCount;
+        if (n_spawns == 0) {
+            Debug.LogError("No spawn points in scene");
+            return Vector3.zero;
+        }
+        bool found = false;
+        Transform spawn = null;
+        foreach (int spawn_idx in ShuffledRange(n_spawns))
+        {
+            spawn = spawns.transform.GetChild(spawn_idx);
+            bool isFree = !spawn.gameObject.GetComponent<SpawnPoint>().occupied;
+            bool isInOuterSphere = (spawn.position - center).magnitude < maxRadius;
+            bool isOutsideInnerSphere = (spawn.position - center).magnitude > minRadius;
+            bool isValid = isFree && isInOuterSphere && isOutsideInnerSphere;
+            if (isValid)
+            {
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            Debug.LogError("No free spawn points in scene withing sphereshell constraints. Breaking constraints.");
+            return SampleSpawn(occupy);
         }
         if (occupy) {
             spawn.gameObject.GetComponent<SpawnPoint>().occupied = true;

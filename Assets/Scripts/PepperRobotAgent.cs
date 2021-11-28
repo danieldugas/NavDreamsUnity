@@ -126,6 +126,7 @@ public class PepperRobotAgent : Agent
         sensor.AddObservation(vel_in_forward);
         sensor.AddObservation(vel_in_left);
         sensor.AddObservation(vel_in_trigtop);
+        sensor.AddObservation(currentDifficulty);
     }
 
 

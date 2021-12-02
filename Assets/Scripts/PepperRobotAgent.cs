@@ -185,7 +185,15 @@ public class PepperRobotAgent : Agent
         // Move joint, as a test
         SetJointTarget(LShoulderPitchParent, (1.0f - actionBuffers.ContinuousActions[3]) * 90.0f);
         SetJointTarget(RShoulderPitchParent, (1.0f - actionBuffers.ContinuousActions[3]) * 90.0f);
-        // Move person as a test
+        // Change difficulty if required
+        if (actionBuffers.ContinuousActions[4] != 0.0f)
+        {
+            if (DEBUG)
+                Debug.Log("Difficulty change requested");
+            currentDifficulty = Mathf.Clamp(
+                Mathf.RoundToInt(actionBuffers.ContinuousActions[4] * 50), 0, 50);
+        }
+        // Move people
         people.DoNavStep(environment, timestep);
         // Rewards
         float distanceToTarget = Vector3.Distance(BaseRBody.transform.position, Target.position);

@@ -8780,7 +8780,7 @@ GameObject:
   m_Name: TableOffice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &302427537
@@ -17677,7 +17677,7 @@ GameObject:
   m_Name: TableOffice (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &620288375
@@ -22264,7 +22264,7 @@ GameObject:
   m_Name: TableOffice (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &791004272
@@ -43948,7 +43948,7 @@ GameObject:
   m_Name: TableOffice (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1477649007
@@ -49905,7 +49905,7 @@ GameObject:
   m_Name: TableOffice (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1689805307
@@ -50099,7 +50099,7 @@ GameObject:
   m_Name: TableOffice (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1704177983
@@ -74595,9 +74595,9 @@ MonoBehaviour:
     VectorObservationSize: 6
     NumStackedVectorObservations: 1
     m_ActionSpec:
-      m_NumContinuousActions: 4
+      m_NumContinuousActions: 5
       BranchSizes: 
-    VectorActionSize: 04000000
+    VectorActionSize: 05000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1

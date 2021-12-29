@@ -132,6 +132,8 @@ public class PersonNavController : MonoBehaviour
         nma.radius = 0.3f;
         nma.height = 1.8f;
         nma.speed = 1.0f;
+        nma.updatePosition = false;
+        nma.updateRotation = false;
         // Add capsule colliders to important limbs and trunk (compromise between accuracy and precision)
         // This is specific to rocketbox joint chain and will fail if gameobject hierarcy is different
         if (addAdultColliders() || addChildColliders()) {
@@ -149,6 +151,9 @@ public class PersonNavController : MonoBehaviour
     {
         // Update own position
         transform.position = position;
+        UnityEngine.AI.NavMeshAgent nma = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        nma.nextPosition = position;
+        nma.Warp(position);
         // Create goal object if it does not exist
         if (currentGoal == null)
         {
@@ -175,6 +180,7 @@ public class PersonNavController : MonoBehaviour
     public void DoNavStep(EnvironmentController environmentController, float timestep)
     {
         // NavMeshAgent takes care of actual movement, we just set destinations when necessary
+        UnityEngine.AI.NavMeshAgent nma = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
         // check if goal is reached
         if ((currentGoal.transform.position - this.transform.position).magnitude < kGoalReachedDist) {
             waitAtGoalTimeRemaining -= timestep;
@@ -186,7 +192,6 @@ public class PersonNavController : MonoBehaviour
             } else {
                 if (!Waiting) {
                     // Wait for a while (enable wait animation)
-                    UnityEngine.AI.NavMeshAgent nma = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
                     nma.speed = 0.0f;
                     this.GetComponent<Animator>().SetFloat("Speed", 0.0f);
                     this.GetComponent<Animator>().SetInteger("AnimationType", Random.Range(1, 4));
@@ -194,7 +199,54 @@ public class PersonNavController : MonoBehaviour
                 }
             }
         }
+        // we have to do this ourselves, otherwise the navmeshagent will not update its position fast enough (Update vs FixedUpate)
+        // this is what (we think) navmeshagent does internally in update
+        UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
+        nma.nextPosition = transform.position;
+        bool pathIsFound = nma.CalculatePath(nma.destination, path);
+        if (pathIsFound)
+        {
+            if (path.corners.Length > 1)
+            {
+                Vector3 next = path.corners[1];
+                if (DEBUG)
+                {
+                    Vector3 prev = nma.nextPosition;
+                    int i = 0;
+                    foreach (Vector3 point in path.corners) {
+                        Debug.DrawLine(prev, point, Color.Lerp(Color.red, Color.green, (i % 5) / 4.0f));
+                        prev = point;
+                        i++;
+                    }
+                }
+                float velocity = nma.speed; // Could be simulated with momentum instead
+                next = Vector3.MoveTowards(this.transform.position, next, timestep * velocity);
+                Vector3 delta = (next - this.transform.position);
+                nma.velocity = (next - this.transform.position) / timestep;
+                Vector3 desiredDirection = delta.normalized;
+                Vector3 currentDirection = transform.forward;
+                float kMaxRotationSpeed = nma.angularSpeed; // degree/sec
+                float maxRotationAngle = timestep * kMaxRotationSpeed;
+                float desiredRotationAngle = Mathf.Abs(Vector3.Angle(currentDirection, desiredDirection));
+                Vector3 nextDirection = Vector3.Slerp(currentDirection, desiredDirection, Mathf.Clamp01(maxRotationAngle / desiredRotationAngle));
+                transform.position = next;
+                if (nextDirection.magnitude != 0.0f)
+                {
+                    transform.rotation = Quaternion.LookRotation(nextDirection);
+                }
+                this.GetComponent<Animator>().SetFloat("Speed", velocity);
+                this.GetComponent<Animator>().SetFloat("AngularSpeed", Vector3.Angle(nextDirection, currentDirection) / timestep);
+            }
+            else
+            {
+                if (DEBUG) Debug.LogWarning("Path has only one corner");
+            }
         
+        }
+        else
+        {
+            if (DEBUG) Debug.LogWarning("No path found.");
+        }
     }
 
     // takes the new goal position and samples a wait time and speed, then directs the navmeshagent and animator 

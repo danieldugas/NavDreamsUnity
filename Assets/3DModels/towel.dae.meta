@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3de92dd01bafa230dbda33ed53e297e0
+guid: 452cbe9c4e60f62beb7e1d055b4aba7b
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -79,16 +79,21 @@ ModelImporter:
     serializedVersion: 3
     human: []
     skeleton:
-    - name: 161122_HWY_Galleri(Clone)
+    - name: towel(Clone)
       parentName: 
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: default
-      parentName: 161122_HWY_Galleri(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+    - name: Plane.001
+      parentName: towel(Clone)
+      position: {x: -0, y: 1.244247, z: 0.235704}
+      rotation: {x: 0.0000000218557, y: -0, z: -0, w: 1}
+      scale: {x: 1.331667, y: 2.642047, z: 1}
+    - name: Plane
+      parentName: towel(Clone)
+      position: {x: -0, y: 1.244247, z: 0.235704}
+      rotation: {x: 0.0000000218557, y: -0, z: -0, w: 1}
+      scale: {x: 1.331667, y: 2.642047, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

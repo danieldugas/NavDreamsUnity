@@ -42,3 +42,4 @@ sysinfo.txt
 
 # Manually added by Daniel
 Assets/ML-Agents/Timers/Prototype_timers.json
+Assets/ML-Agents/Timers/*_timers.json*

@@ -6,6 +6,23 @@ using UnityEngine;
 public class LabStaticEnvironmentController : EnvironmentController
 {
     public GameObject spawns; // The places to spawn agents / goals
+    public GameObject[] moveableObjects; // The objects that can be moved
+    public List<Vector3> originalPositions; // The original positions of the moveable objects
+    public List<Quaternion> originalRotations; // the original rotations of the moveable objects
+
+    void Start()
+    {
+        // Get the original positions and rotations of the moveable objects
+        moveableObjects = GameObject.FindGameObjectsWithTag("MoveableKozeObject");
+        originalPositions = new List<Vector3>();
+        originalRotations = new List<Quaternion>();
+        foreach (GameObject obj in moveableObjects)
+        {
+            originalPositions.Add(obj.transform.position);
+            originalRotations.Add(obj.transform.rotation);
+        }
+    }
+
     override public void OnEpisodeBegin(int n_robots,
                                         int difficulty,
                                         int n_people,
@@ -23,6 +40,7 @@ public class LabStaticEnvironmentController : EnvironmentController
         }
         
         // this is a static environment - nothing to do with objects / walls
+        ShakeMoveableObjects();
         // fill positions and goals
         float minRobotGoalDist = 2.0f;
         float maxRobotGoalDist = 7.0f + difficulty;
@@ -144,6 +162,27 @@ public class LabStaticEnvironmentController : EnvironmentController
             list[i - 1] = temp;
         }
         return list;
+    }
+
+    private void ShakeMoveableObjects() {
+        // Shake them by a few centimeters, rotate a little
+        for (int i = 0; i < moveableObjects.Length; i++)
+        {
+            GameObject obj = moveableObjects[i];
+            // reset original condition
+            obj.SetActive(true);
+            obj.transform.position = originalPositions[i];
+            obj.transform.rotation = originalRotations[i];
+            // Shake, vanish, rotate
+            bool vanish = Random.Range(0.0f, 1.0f) < 0.03f;
+            if (vanish)
+            {
+                obj.SetActive(false);
+            }
+            float maxShake_m = 0.03f;
+            obj.transform.position += new Vector3(Random.Range(-maxShake_m, maxShake_m), 0.0f, Random.Range(-maxShake_m, maxShake_m));
+            obj.transform.RotateAround(obj.transform.position, Vector3.up, Random.Range(0.0f, 360.0f));
+        }
     }
 
 }

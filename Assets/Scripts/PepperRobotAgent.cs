@@ -11,6 +11,7 @@ public class PepperRobotAgent : Agent
 {
     public bool DEBUG = false;
     public bool DEBUGOBS = false;
+    public bool DEBUGENDEP = false;
     public int currentDifficulty = 0;
     
     [Tooltip("Higher force multiplier = faster acceleration to desired vel.")]
@@ -198,6 +199,13 @@ public class PepperRobotAgent : Agent
         // Rewards
         float distanceToTarget = Vector3.Distance(BaseRBody.transform.position, Target.position);
 
+        if (DEBUGENDEP)
+        {
+            Debug.Log("Forcing epsiode end");
+            EndEpisode();
+            DEBUGENDEP = false;
+        }
+        
         // Reached target
         if (distanceToTarget < goalRadius)
         {

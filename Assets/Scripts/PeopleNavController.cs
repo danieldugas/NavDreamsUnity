@@ -7,20 +7,22 @@ public class PeopleNavController : MonoBehaviour
 {
     public void OnEpisodeBegin(int n_people, Vector3[] people_positions, Vector3[] people_goals)
     {
-        int i = 0;
+        int n_active = 0;
         // Get starting positions for people
-        foreach (PersonNavController person in transform.GetComponentsInChildren<PersonNavController>(true))
+        PersonNavController[] people = transform.GetComponentsInChildren<PersonNavController>(true);
+        foreach (int i in IterTools.ShuffledRange(people.Length))
         {
-            if (i >= n_people)
+            PersonNavController person = people[i];
+            if (n_active >= n_people)
             {
                 person.RemoveFromScene();
             } else {
                 person.AddToScene();
-                person.Reset(people_positions[i], people_goals[i]);
+                person.Reset(people_positions[n_active], people_goals[n_active]);
+                n_active++;
             }
-            i++;
         }
-        if (i < n_people)
+        if (people.Length < n_people)
         {
             Debug.LogError("Not enough people gameobject for requested crowd size");
         }

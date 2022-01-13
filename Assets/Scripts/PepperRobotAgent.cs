@@ -186,26 +186,19 @@ public class PepperRobotAgent : Agent
         // Move joint, as a test
         SetJointTarget(LShoulderPitchParent, (1.0f - actionBuffers.ContinuousActions[3]) * 90.0f);
         SetJointTarget(RShoulderPitchParent, (1.0f - actionBuffers.ContinuousActions[3]) * 90.0f);
-        // Change difficulty if required
-        if (actionBuffers.ContinuousActions[4] != 0.0f)
-        {
-            if (DEBUG)
-                Debug.Log("Difficulty change requested");
-            currentDifficulty = Mathf.Clamp(
-                Mathf.RoundToInt(actionBuffers.ContinuousActions[4] * 50), 0, 50);
-        }
         // Move people
         people.DoNavStep(environment, timestep);
         // Rewards
         float distanceToTarget = Vector3.Distance(BaseRBody.transform.position, Target.position);
+        bool endEpisode = false;
 
         if (DEBUGENDEP)
         {
             Debug.Log("Forcing epsiode end");
-            EndEpisode();
+            endEpisode = true;
             DEBUGENDEP = false;
         }
-        
+
         // Reached target
         if (distanceToTarget < goalRadius)
         {
@@ -213,7 +206,7 @@ public class PepperRobotAgent : Agent
                 Debug.Log("Reached target");
             SetReward(100.0f);
             currentDifficulty = Mathf.Clamp(currentDifficulty + 1, 0, 50);
-            EndEpisode();
+            endEpisode = true;
         }
 
         // Fell off platform
@@ -222,7 +215,7 @@ public class PepperRobotAgent : Agent
             if (DEBUG)
                 Debug.Log("invalid height");
             currentDifficulty = Mathf.Clamp(currentDifficulty - 1, 0, 50);
-            EndEpisode();
+            endEpisode = true;
         }
 
         // Toppled over
@@ -231,7 +224,7 @@ public class PepperRobotAgent : Agent
             if (DEBUG)
                 Debug.Log("Toppled over");
             currentDifficulty = Mathf.Clamp(currentDifficulty - 1, 0, 50);
-            EndEpisode();
+            endEpisode = true;
         }
 
         foreach (ColliderDamageMonitor dm in GetComponentsInChildren<ColliderDamageMonitor>())
@@ -241,8 +234,22 @@ public class PepperRobotAgent : Agent
                 if (DEBUG)
                     Debug.Log("Maximum damage from " + dm.gameObject.name);
                 currentDifficulty = Mathf.Clamp(currentDifficulty - 1, 0, 50);
-                EndEpisode();
+                endEpisode = true;
             }
+        }
+
+        // Change difficulty if required
+        if (actionBuffers.ContinuousActions[4] != 0.0f)
+        {
+            if (DEBUG)
+                Debug.Log("Difficulty change requested");
+            currentDifficulty = Mathf.Clamp(
+                Mathf.RoundToInt(actionBuffers.ContinuousActions[4] * 50), 0, 50);
+        }
+        
+        if (endEpisode)
+        {
+            EndEpisode();
         }
     }
 

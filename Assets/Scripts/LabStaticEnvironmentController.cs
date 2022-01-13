@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class LabStaticEnvironmentController : EnvironmentController
 {
     public GameObject spawns; // The places to spawn agents / goals
@@ -92,7 +91,7 @@ public class LabStaticEnvironmentController : EnvironmentController
         }
         bool found = false;
         Transform spawn = null;
-        foreach (int spawn_idx in ShuffledRange(n_spawns))
+        foreach (int spawn_idx in IterTools.ShuffledRange(n_spawns))
         {
             spawn = spawns.transform.GetChild(spawn_idx);
             if (!spawn.gameObject.GetComponent<SpawnPoint>().occupied)
@@ -124,7 +123,7 @@ public class LabStaticEnvironmentController : EnvironmentController
         }
         bool found = false;
         Transform spawn = null;
-        foreach (int spawn_idx in ShuffledRange(n_spawns))
+        foreach (int spawn_idx in IterTools.ShuffledRange(n_spawns))
         {
             spawn = spawns.transform.GetChild(spawn_idx);
             bool isFree = !spawn.gameObject.GetComponent<SpawnPoint>().occupied;
@@ -149,20 +148,6 @@ public class LabStaticEnvironmentController : EnvironmentController
         return pos;
     }
 
-    private static List<int> ShuffledRange(int max) {
-        List<int> list = new List<int>();
-        for (int i = 0; i < max; i++) {
-            list.Add(i);
-        }
-        for (int i = list.Count; i > 1; i -= 1)
-        {
-            int j = Random.Range(0, i); 
-            int temp = list[j];
-            list[j] = list[i - 1];
-            list[i - 1] = temp;
-        }
-        return list;
-    }
 
     private void ShakeMoveableObjects() {
         // Shake them by a few centimeters, rotate a little

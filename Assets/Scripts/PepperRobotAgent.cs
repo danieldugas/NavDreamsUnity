@@ -13,6 +13,7 @@ public class PepperRobotAgent : Agent
     public bool DEBUGOBS = false;
     public bool DEBUGENDEP = false;
     public int currentDifficulty = 0;
+    public int requestedDifficulty = -1;
     
     [Tooltip("Higher force multiplier = faster acceleration to desired vel.")]
     public float forceMultiplier = 10.0f;
@@ -69,6 +70,11 @@ public class PepperRobotAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        if (requestedDifficulty != -1)
+        {
+            currentDifficulty = requestedDifficulty;
+            requestedDifficulty = -1;
+        }
         int n_robots = 1;
         int n_people = Mathf.Clamp(currentDifficulty, 0, people.GetMaxPeopleCount());
         // Reset the environment
@@ -186,6 +192,14 @@ public class PepperRobotAgent : Agent
         // Move joint, as a test
         SetJointTarget(LShoulderPitchParent, (1.0f - actionBuffers.ContinuousActions[3]) * 90.0f);
         SetJointTarget(RShoulderPitchParent, (1.0f - actionBuffers.ContinuousActions[3]) * 90.0f);
+        // Change difficulty if required
+        if (actionBuffers.ContinuousActions[4] != 0.0f)
+        {
+            if (DEBUG)
+                Debug.Log("Difficulty change requested. Will be applied at next episode.");
+            requestedDifficulty = Mathf.Clamp(
+                Mathf.RoundToInt(actionBuffers.ContinuousActions[4] * 50), 0, 50);
+        }
         // Move people
         people.DoNavStep(environment, timestep);
         // Rewards
@@ -238,15 +252,6 @@ public class PepperRobotAgent : Agent
             }
         }
 
-        // Change difficulty if required
-        if (actionBuffers.ContinuousActions[4] != 0.0f)
-        {
-            if (DEBUG)
-                Debug.Log("Difficulty change requested");
-            currentDifficulty = Mathf.Clamp(
-                Mathf.RoundToInt(actionBuffers.ContinuousActions[4] * 50), 0, 50);
-        }
-        
         if (endEpisode)
         {
             EndEpisode();

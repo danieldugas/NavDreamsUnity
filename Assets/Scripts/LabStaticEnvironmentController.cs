@@ -8,6 +8,8 @@ public class LabStaticEnvironmentController : EnvironmentController
     public GameObject[] moveableObjects; // The objects that can be moved
     public List<Vector3> originalPositions; // The original positions of the moveable objects
     public List<Quaternion> originalRotations; // the original rotations of the moveable objects
+    public GameObject[] toggleableLights; // The lights that can be toggled
+    public float lightDisableProbability = 0.1f; // The probability that each light will be disabled
 
     void Start()
     {
@@ -20,6 +22,8 @@ public class LabStaticEnvironmentController : EnvironmentController
             originalPositions.Add(obj.transform.position);
             originalRotations.Add(obj.transform.rotation);
         }
+        // Get the toggleable lights
+        toggleableLights = GameObject.FindGameObjectsWithTag("ToggleableLight");
     }
 
     override public void OnEpisodeBegin(int n_robots,
@@ -39,7 +43,7 @@ public class LabStaticEnvironmentController : EnvironmentController
         }
         
         // this is a static environment - nothing to do with objects / walls
-        ShakeMoveableObjects();
+        SampleSceneVariations();
         // fill positions and goals
         float minRobotGoalDist = 2.0f;
         float maxRobotGoalDist = 7.0f + difficulty;
@@ -148,6 +152,10 @@ public class LabStaticEnvironmentController : EnvironmentController
         return pos;
     }
 
+    private void SampleSceneVariations() {
+        ShakeMoveableObjects();
+        RandomToggleLights();
+    }
 
     private void ShakeMoveableObjects() {
         // Shake them by a few centimeters, rotate a little
@@ -167,6 +175,14 @@ public class LabStaticEnvironmentController : EnvironmentController
             float maxShake_m = 0.03f;
             obj.transform.position += new Vector3(Random.Range(-maxShake_m, maxShake_m), 0.0f, Random.Range(-maxShake_m, maxShake_m));
             obj.transform.RotateAround(obj.transform.position, Vector3.up, Random.Range(0.0f, 360.0f));
+        }
+    }
+
+    private void RandomToggleLights() {
+        // Toggle lights
+        foreach (GameObject obj in toggleableLights)
+        {
+            obj.SetActive(Random.Range(0.0f, 1.0f) >= lightDisableProbability);
         }
     }
 

@@ -1,5 +1,13 @@
 unity version: 2021.1.25f1
 
+# Opening the Project in Unity
+
+- make sure to clone with --recursive
+- (to be fixed) after cloning, ensure WaveEnv/Assets/AddOns/Microsoft-Rocketbox points to remote git@github.com:danieldugas/Microsoft-Rocketbox.git, branch **waveenv**
+- (to be fixed) make sure blender ver >2.9 is installed or unity will complain when importing some models
+- open project in unity
+- open Assets/Scenes/KozeHD.unity and press play
+
 # Creating your own Scene
 
 TODO

@@ -19,6 +19,7 @@ chmod +x ~/Downloads/UnityHub.AppImage
 - make sure to clone with --recursive
 - (to be fixed) after cloning, ensure WaveEnv/Assets/AddOns/Microsoft-Rocketbox points to remote git@github.com:danieldugas/Microsoft-Rocketbox.git, branch **waveenv**
 - (to be fixed) make sure blender ver >2.9 is installed or unity will complain when importing some models
+- (to be fixed) git clone git@github.com:Unity-Technologies/ml-agents.git next to your project folder
 - open project in unity
 - open Assets/Scenes/KozeHD.unity and press play
 

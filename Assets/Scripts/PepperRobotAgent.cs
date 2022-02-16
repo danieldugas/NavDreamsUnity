@@ -85,7 +85,7 @@ public class PepperRobotAgent : Agent
         // Reset damage monitor for each collider
         foreach (ColliderDamageMonitor dm in GetComponentsInChildren<ColliderDamageMonitor>())
         {
-            dm.damage = 0.0f;
+            dm.Reset();
         }
         // make all children rigidbodies kinematic
         foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
@@ -228,6 +228,7 @@ public class PepperRobotAgent : Agent
         {
             if (DEBUG)
                 Debug.Log("invalid height");
+            SetReward(-0.01f);
             currentDifficulty = Mathf.Clamp(currentDifficulty - 1, 0, 50);
             endEpisode = true;
         }
@@ -237,6 +238,7 @@ public class PepperRobotAgent : Agent
         {
             if (DEBUG)
                 Debug.Log("Toppled over");
+            SetReward(-0.02f);
             currentDifficulty = Mathf.Clamp(currentDifficulty - 1, 0, 50);
             endEpisode = true;
         }
@@ -246,7 +248,14 @@ public class PepperRobotAgent : Agent
             if (dm.damage > maxDamage)
             {
                 if (DEBUG)
-                    Debug.Log("Maximum damage from " + dm.gameObject.name);
+                    Debug.Log("Maximum damage at " + dm.gameObject.name + " hit by " + dm.lastHitBy.name);
+                if (dm.lastHitBy.transform.IsChildOf(people.transform))
+                {
+                    SetReward(-0.04f);
+                    Debug.Log("(person)");
+                } else {
+                    SetReward(-0.03f);
+                }
                 currentDifficulty = Mathf.Clamp(currentDifficulty - 1, 0, 50);
                 endEpisode = true;
             }

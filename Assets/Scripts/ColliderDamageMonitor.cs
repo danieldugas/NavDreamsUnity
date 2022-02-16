@@ -7,9 +7,16 @@ public class ColliderDamageMonitor : MonoBehaviour
 
     public float damage = 0.0f;
     public bool ignoreDamage = false;
+    public GameObject lastHitBy = null;
     [Tooltip("The robot to which this damage monitor reports. All damage monitors with the same parent ignore each other. (set automatically)")]
     public GameObject parent; // should be set by whichever script creates this component
     public bool DEBUG = false;
+    public void Reset()
+    {
+        damage = 0.0f;
+        lastHitBy = null;
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         foreach (ContactPoint contact in collision.contacts)
@@ -31,6 +38,7 @@ public class ColliderDamageMonitor : MonoBehaviour
         {
             if (!ignoreDamage) {
                 damage += collision.relativeVelocity.magnitude;
+                lastHitBy = collision.gameObject;
             }
             if (DEBUG)
                 Debug.Log(gameObject.name + " hit by " + collision.gameObject.name + ": " + collision.relativeVelocity.magnitude + " " + damage);

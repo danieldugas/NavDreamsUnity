@@ -21,6 +21,7 @@ public class PepperRobotAgent : Agent
     public float velMultiplier = 1.0f;
     public float rotvelMultiplier = 1.0f;
     public float goalRadius = 1.42f;
+    public float invulnerabilityTime = 1.0f;
     public float maxDamage = 0.5f; // measured as sum of impact velocity [m/s]
     public Transform Target;
 
@@ -56,6 +57,7 @@ public class PepperRobotAgent : Agent
 
     private CameraSensor cameraSensor;
     private float LastActionTime = 0.0f;
+    private float EpisodeBeginTime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -82,11 +84,6 @@ public class PepperRobotAgent : Agent
         // Reset people
         people.OnEpisodeBegin(n_people, people_positions, people_goals);
         // Reset robot
-        // Reset damage monitor for each collider
-        foreach (ColliderDamageMonitor dm in GetComponentsInChildren<ColliderDamageMonitor>())
-        {
-            dm.Reset();
-        }
         // make all children rigidbodies kinematic
         foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
         {
@@ -104,6 +101,12 @@ public class PepperRobotAgent : Agent
         this.BaseRBody.velocity = Vector3.zero;
         this.Target.position = robot_goals[0];
         this.Target.gameObject.GetComponent<Renderer>().enabled = false;
+        // Reset damage monitor for each collider
+        foreach (ColliderDamageMonitor dm in GetComponentsInChildren<ColliderDamageMonitor>())
+        {
+            dm.Reset();
+        }
+        EpisodeBeginTime = Time.time;
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -142,6 +145,7 @@ public class PepperRobotAgent : Agent
         float now = Time.time;
         float timestep = now - LastActionTime;
         LastActionTime = now;
+        float timeSinceEpisodeBegin = now - EpisodeBeginTime;
         //Debug.Log(Time.time);
         //Debug.Log(timestep);
         // Actions, size = 2
@@ -152,7 +156,13 @@ public class PepperRobotAgent : Agent
         commandRot.y = -actionBuffers.ContinuousActions[2];
 
         // invulnerable if stopped (otherwise people unfairly hurt the robot)
-        bool isMoving = commandVel.magnitude > 0.05f || commandRot.magnitude > 0.05f;
+        bool isMoving = commandVel.magnitude > 0.05f; // || commandRot.magnitude > 0.05f;
+        // invulnerable if episode is beginning (weird teleportation effects)
+        if (timeSinceEpisodeBegin < invulnerabilityTime) {
+            isMoving = false;
+            if (DEBUG)
+                Debug.Log("Invulnerable " + timeSinceEpisodeBegin);
+        }
         foreach (ColliderDamageMonitor dm in GetComponentsInChildren<ColliderDamageMonitor>())
         {
             if (isMoving)
@@ -245,6 +255,7 @@ public class PepperRobotAgent : Agent
 
         foreach (ColliderDamageMonitor dm in GetComponentsInChildren<ColliderDamageMonitor>())
         {
+            dm.DEBUG = DEBUG;
             if (dm.damage > maxDamage)
             {
                 if (DEBUG)
@@ -263,6 +274,8 @@ public class PepperRobotAgent : Agent
 
         if (endEpisode)
         {
+            if (DEBUG)
+                Debug.Log("Ending episode.");
             EndEpisode();
         }
     }

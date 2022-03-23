@@ -1,4 +1,4 @@
-unity version: 2021.1.25f1
+Project Unity version: 2021.1.25f1
 
 # Installing Unity on Ubuntu
 
@@ -13,41 +13,19 @@ chmod +x ~/Downloads/UnityHub.AppImage
 ~/Downloads/UnityHub.AppImage unityhub://2021.1.25f1/b6f2b893ea32
 ```
 
-
 # Opening the Project in Unity
 
 - make sure to clone with --recursive
-- (to be fixed) after cloning, ensure WaveEnv/Assets/AddOns/Microsoft-Rocketbox points to remote git@github.com:danieldugas/Microsoft-Rocketbox.git, branch **waveenv**
-- (to be fixed) make sure blender ver >2.9 is installed or unity will complain when importing some models
-- (to be fixed) git clone git@github.com:Unity-Technologies/ml-agents.git next to your project folder
-- open project in unity
-- open Assets/Scenes/KozeHD.unity and press play
+- (to be fixed) Make sure blender ver >2.9 is installed before opening the project or unity will fail to import some 3D models.
+- (to be fixed) `git clone git@github.com:Unity-Technologies/ml-agents.git` next to the `NavDreamsUnity` folder
+- (to be fixed) after cloning, ensure `NavDreamsUnity/Assets/AddOns/Microsoft-Rocketbox` points to remote `git@github.com:danieldugas/Microsoft-Rocketbox.git`, branch **waveenv**
+- open the project in unity (run the `UnityHub.AppImage` executable and select the project folder).
+- open `Assets/Scenes/KozeHD.unity` and press play
 
-# Creating your own Scene
+![titleimage](github_media/titleimage.gif)
 
-TODO
-- Adding objects
-- Adding spawns
-- NavMesh
+# More How-Tos
 
-# Adding your own Robot
+- [Creating your own scene](wiki/custom_scene.md)
+- [Adding your own robot](wiki/custom_robot.md)
 
-Follow this guide to import your robot from ROS to unity
-https://github.com/siemens/ros-sharp/wiki/User_App_ROS_TransferURDFFromROS
-
-Add hinge joints
-
-TODO: default inputs
-actions:
-  - forward vel
-  - side vel
-  - rotation vel
-  - difficulty
-  - joints
-
-TODO: adding your own joints
-
-TODO: default outputs
-  - camera
-  - goal
-  - velocity

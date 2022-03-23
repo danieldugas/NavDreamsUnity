@@ -1,6 +1,14 @@
 Project Unity version: 2021.1.25f1
 
-# Installing Unity on Ubuntu
+# NavDreamsUnity
+
+This is the Unity project used to build the *modern*, *cathedral*, *gallery*, and *replica* scenarios for the [NavDreams](github.com/danieldugas/NavDreams) reinforcement-learning paper.
+
+(Looking for the *simple*, *city*, and *office* scenarios? [This way.](github.com/ethz-asl/CrowdBotUnity))
+
+![titleimage](github_media/titleimage.gif)
+
+## Installing Unity on Ubuntu
 
 - (Ubuntu 18.04) Install blender 2.9
 ```
@@ -13,18 +21,17 @@ chmod +x ~/Downloads/UnityHub.AppImage
 ~/Downloads/UnityHub.AppImage unityhub://2021.1.25f1/b6f2b893ea32
 ```
 
-# Opening the Project in Unity
+## Opening the Project in Unity
 
 - make sure to clone with --recursive
 - (to be fixed) Make sure blender ver >2.9 is installed before opening the project or unity will fail to import some 3D models.
 - (to be fixed) `git clone git@github.com:Unity-Technologies/ml-agents.git` next to the `NavDreamsUnity` folder
 - (to be fixed) after cloning, ensure `NavDreamsUnity/Assets/AddOns/Microsoft-Rocketbox` points to remote `git@github.com:danieldugas/Microsoft-Rocketbox.git`, branch **waveenv**
 - open the project in unity (run the `UnityHub.AppImage` executable and select the project folder).
-- open `Assets/Scenes/KozeHD.unity` and press play
+- open `Assets/Scenes/KozeHD.unity`, and the *replica* scenario should show. Press play to test it, the robot can be moved with the WASD keys and turned using the left and right mouse buttons.
 
-![titleimage](github_media/titleimage.gif)
 
-# More How-Tos
+## More How-Tos
 
 - [Creating your own scene](wiki/custom_scene.md)
 - [Adding your own robot](wiki/custom_robot.md)

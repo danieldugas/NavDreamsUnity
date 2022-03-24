@@ -2,7 +2,7 @@ Project Unity version: 2021.1.25f1
 
 # NavDreamsUnity
 
-This is the Unity project used to build the *modern*, *cathedral*, *gallery*, and *replica* scenarios for the [NavDreams](github.com/danieldugas/NavDreams) reinforcement-learning paper.
+This is the Unity project used to build the *modern*, *cathedral*, *gallery*, and *replica* scenarios for the [NavDreams](https://www.github.com/danieldugas/NavDreams) reinforcement-learning paper.
 
 (Looking for the *simple*, *city*, and *office* scenarios? [This way.](https://www.github.com/ethz-asl/NavRep3DUnity))
 

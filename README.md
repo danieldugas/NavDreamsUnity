@@ -24,6 +24,7 @@ chmod +x ~/Downloads/UnityHub.AppImage
 ## Opening the Project in Unity
 
 - make sure to clone with --recursive
+- :warning: Due to git LFS bandwith limits, when copying this repository two files [161122_HWY_Galleri.obj](Assets/3DModels/IndoorScenes/the-picture-gallery/source/161122_HWY_Galleri/161122_HWY_Galleri.obj) and  [Cloister_st_mary_fovea_edit.obj](https://github.com/danieldugas/NavDreamsUnity/blob/master/Assets/3DModels/IndoorScenes/cloister-cathedral-of-st-mary-of-la-seu-vella/source/Cloister_st_mary_fovea_edit/Cloister_st_mary_fovea_edit.obj) sometimes fail to download. I've uploaded a mirror [here](https://drive.google.com/drive/folders/1OKpX8P3ktfKB9hFAjMddpxoye7dy0yBI?usp=drive_link).
 - (to be fixed) Make sure blender ver >2.9 is installed before opening the project or unity will fail to import some 3D models.
 - (to be fixed) `git clone git@github.com:Unity-Technologies/ml-agents.git` next to the `NavDreamsUnity` folder
 - (to be fixed) after cloning, ensure `NavDreamsUnity/Assets/AddOns/Microsoft-Rocketbox` points to remote `git@github.com:danieldugas/Microsoft-Rocketbox.git`, branch **waveenv**
